@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-02-14T14:39:41+00:00</updated><id>/feed.xml</id><title type="html">FJAN IT</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Blazor, Bootstrap en SASS</title><link href="/2023/05/07/blazor-bootstrap-sass.html" rel="alternate" type="text/html" title="Blazor, Bootstrap en SASS" /><published>2023-05-07T00:00:00+00:00</published><updated>2023-05-07T00:00:00+00:00</updated><id>/2023/05/07/blazor-bootstrap-sass</id><content type="html" xml:base="/2023/05/07/blazor-bootstrap-sass.html"><![CDATA[<h3 class="blog-title">Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project
+</h3>
+
+<p>
+    Bootstrap is een populair framework voor het maken van responsieve en mobielvriendelijke websites. Sass is een
+    uitbreiding van CSS die extra functies biedt, zoals variabelen, geneste regels, mixins en meer. Door Bootstrap en
+    Sass te gebruiken in je Blazor-applicatie, kun je de stijl en het uiterlijk van je componenten verbeteren en
+    aanpassen.
+</p>
+<p>
+    Om Bootstrap en Sass toe te voegen aan je Blazor-applicatie, moet je de volgende stappen volgen:
+</p>
+<ul class="check-list">
+    <li>Voeg bootstrap toe aan je project.
+    </li>
+    <li>Maak je eigen aangepaste stijl.</li>
+    <li>Configureer de Sass compiler.</li>
+</ul>
+<p>In deze blog zal ik je laten zien hoe je deze stappen kunt uitvoeren in een eenvoudige Blazor. Ik zal gebruik maken
+    van Visual Studio als editor. Ik zal ook laten zien hoe je Sass kunt gebruiken om de standaardstijlen van Bootstrap
+    aan te passen en om aangepaste stijlen toe te voegen aan je Blazor-componenten.
+</p>
+<h4>Bootstrap toevoegen</h4>
+<p>
+    Wanneer je een project hebt aangemaakt kun je een client-side library toevoegen. Rechter muisklik op je project in
+    Visual Studio. Vervolgens klik je op Add en dan Client-Side Library.
+</p>
+
+<div class="blog-image my-4">
+    <img src="/assets/images/gallery/bootstrap-install.png" />
+</div>
+
+<p>
+    Vervolgens zoek je naar bootstrap en kies je de gewenste versie. Kies vervolgens voor specifieke bestanden en vink
+    dan alleen de folders js en scss aan. Tot slot verander je de Target Location naar <i>Styles/bootstrap</i>. Klik dan op
+    install zodat de bestanden in je project worden geladen.
+</p>
+<h4>Een aangepaste stijl maken</h4>
+<p>
+    Maak een bestand genaamd <i>site.scss</i> aan in de nieuwe folder Styles. Kopieer vervolgens de inhoud van het bestand
+    <i>wwwroot/css/site.css</i> naar het nieuwe bestand in de Styles folder. Vervolgens maak je nog een bestand aan genaamd
+    <i>_variables.scss</i>. Hierin gaan we de bootstrap overrides plaatsen.
+</p>
+<p>
+    Voeg hiervoor de volgende regels toe aan dit nieuwe bestand. Zie de opmerkingen voor wat we precies veranderen aan
+    de stijl. Voor alle mogelijke opties kun je de Bootstrap documentatie raadplegen.
+</p>
+
+<pre class="line-numbers">
+<code class="language-css">
+@import 'bootstrap/scss/_functions';
+
+// We veranderen de primaire kleur naar oranje.
+$primary: #ff6a00;
+
+// We maken een nieuwe variabele aan voor onze accent kleur.
+$accent: #0066ff;
+
+// We veranderen de border radius van bootstrap knoppen.
+$btn-border-radius: 0px;
+
+@import 'bootstrap/scss/_variables';
+
+// Vervolgens voegen we de kleur toe aan de bootstrap map.
+$theme-colors: map-merge($theme-colors, ( "primary": $primary, "accent": $accent ));
+</code></pre>
+
+<p>Om deze aangepaste variabelen te gebruiken voegen we aan <i>site.scss</i> nog de volgende regels toe. We plaatsen deze
+    helemaal aan het begin van dit bestand.</p>
+
+<pre class="line-numbers">
+<code class="language-css">
+@import '_variables.scss';
+@import 'bootstrap/scss/bootstrap.scss';    
+</code></pre>
+
+<h4>Sass Compiler Configureren</h4>
+
+<p>Wat we nu gaan doen is de SASS compiler configureren in Visual Studio. Hiervoor voegen we de volgende extensie toe:
+    <i>Web Compiler 2022+</i>. Nadat je deze hebt gedownload in het extensie venster zul je Visual Studio opnieuw moeten
+    opstarten.
+</p>
+<p>Wanneer de extensie geïnstalleerd is klik je met de rechtermuisknop op het bestand <i>Styles/site.scss</i>. Vervolgens kies
+    je Web Compiler en dan Compile File. Er is nu een <i>compilerconfig.json</i> bestand aangemaakt. Open deze en verander het
+    outputFile pad naar <i>wwwroot/css/site.css</i>. Dit zorgt ervoor dat de css file in je wwwroot komt te staan.</p>
+
+<p>
+    Naast een site.css genereert de web compiler ook een minified file. Deze kun je het beste gebruiken in je
+    applicatie. Open hiervoor <i>Pages/_Host.cshtml</i>. In deze file verwijder je de regel waarin bootstrap.min.css wordt
+    toegevoegd en verander je de regel met <i>css/site.css</i> naar <i>css/site.min.css</i>.
+</p>
+
+<p>
+    Tot slot is er nu nog 1 handige optie die je aan wilt zetten. Namelijk compile on build. Dit zorgt ervoor dat de
+    compiler altijd draait tijdens een build. Hiervoor klik je met de rechtermuisknop op <i>compilerconfig.json</i> en dan Web
+    Compiler en vervolgens Enable compile on build… Dit zorgt ervoor dat er een NuGet package aan je project wordt
+    toegevoegd.
+</p>
+
+<p>
+    Wanneer je nu de Blazor site start zul je zien dat de stijl van bootstrap componenten is gewijzigd. Zie als
+    voorbeeld de counter knop. De kleur is oranje en de hoeken zijn niet meer rond.
+</p>
+
+<div class="blog-image my-4">
+    <img src="/assets/images/gallery/bootstrap-result.png" />
+</div>
+
+<p>
+    Bedankt voor het lezen! Voor meer informatie kun je kijken op <a
+        href="https://getbootstrap.com">getbootstrap.com</a>
+</p>
+
+https://www.pexels.com/photo/green-forest-near-mountain-range-under-clear-sky-361104/]]></content><author><name>Funs Janssen</name></author><category term="Blazor" /><category term="Bootstrap" /><category term="SASS" /><summary type="html"><![CDATA[Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project]]></summary></entry><entry><title type="html">Health Checks</title><link href="/healthchecks" rel="alternate" type="text/html" title="Health Checks" /><published>2023-05-02T00:00:00+00:00</published><updated>2023-05-02T00:00:00+00:00</updated><id>/healthchecks</id><content type="html" xml:base="/healthchecks"><![CDATA[<h3 class="blog-title">Hoe een health check voor je web API je kan helpen om betere
+    software te leveren
+</h3>
+
+<p>
+    Als je een web API ontwikkelt of beheert, weet je hoe belangrijk het is om
+    ervoor te zorgen dat je API altijd goed werkt. Je wilt immers niet dat je
+    gebruikers of klanten gefrustreerd raken door een trage, onbetrouwbare of
+    defecte service. Maar hoe kun je weten of je API in goede staat is? En hoe kun
+    je problemen opsporen en oplossen voordat ze escaleren?
+</p>
+<p>
+    Het antwoord is: gebruik een health check voor je web API. Een health check is
+    een eenvoudige en effectieve manier om de gezondheid van je API te monitoren en
+    te verbeteren. In deze blog post leg ik uit wat een health check is, waarom het
+    nuttig is en hoe je het kunt implementeren.
+</p>
+<h4>Wat is een health check voor een web API?</h4>
+<p>Een health check voor een web API is een methode om je API regelmatig te
+    controleren en om je te waarschuwen als er iets mis is. Het is een diagnostisch
+    hulpmiddel voor je codebase dat je kan helpen om problemen te vinden voordat ze
+    groter worden dan nodig.
+</p>
+<p>
+    Een health check bestaat meestal uit twee onderdelen: een endpoint en een
+    service. Het endpoint is een URL die je aanroept om de status van je API op te
+    vragen. Het endpoint geeft dan een HTTP-statuscode terug die aangeeft of je API
+    gezond (200 OK), ongezond (500 Internal Server Error) of gedeeltelijk gezond
+    (503 Service Unavailable) is.
+</p>
+<p>
+    De service is een externe applicatie die het endpoint periodiek aanroept en de
+    resultaten registreert en rapporteert. De service kan ook acties ondernemen als
+    het endpoint een ongezonde status teruggeeft, zoals het sturen van een e-mail,
+    het maken van een logboek of het starten van een herstelproces.
+</p>
+<h4>Waarom is een health check voor een web API nuttig?</h4>
+<p>
+    Een health check voor een web API is nuttig om verschillende redenen. Hier zijn
+    enkele van de belangrijkste voordelen:
+</p>
+<ul class="check-list">
+    <li>Een health check kan je helpen om de beschikbaarheid, betrouwbaarheid en
+        prestaties van je API te verbeteren door eventuele fouten of vertragingen
+        snel op te sporen en op te lossen. Zo kun je downtime verminderen en de
+        kwaliteit van je service verhogen.
+    </li>
+    <li>Een health check kan je ook helpen om de afhankelijkheden van je API te
+        testen, zoals een database, een schijf of een externe service, en om te
+        bepalen of deze beschikbaar zijn.</li>
+    <li>Een health check kan je tenslotte helpen om de gebruikerservaring en de
+        tevredenheid van je klanten te verhogen door hen een consistente en snelle
+        service te bieden. Je kunt ook rapporten en statistieken genereren over de
+        gezondheid van je API om je inzichten en beslissingen te ondersteunen.</li>
+</ul>
+<h4>Hoe kun je een health check implementeren voor je web API?</h4>
+<p>
+    Er zijn verschillende manieren om een health check te implementeren voor je web
+    API, afhankelijk van je technologiekeuze, je vereisten en je voorkeuren. Hier
+    zijn enkele algemene stappen die je kunt volgen:
+</p>
+<ul class="check-list">
+    <li>Bepaal wat het betekent dat je API gezond is. Dit hangt af van de
+        functionaliteit en de verwachtingen van je API. Bijvoorbeeld, als je API een
+        database nodig heeft om te werken, dan moet je controleren of de database
+        bereikbaar en responsief is. Als je API een externe service aanroept, dan
+        moet je controleren of de service beschikbaar en betrouwbaar is. Je kunt ook
+        andere aspecten controleren, zoals de CPU-belasting, het geheugengebruik of
+        de responstijd van je API.
+    </li>
+    <li>Maak een endpoint voor je health check. Dit is een URL die je aanroept om
+        de status van je API op te vragen. Het endpoint moet een HTTP-statuscode
+        teruggeven die aangeeft of je API gezond (200 OK), ongezond (500 Internal
+        Server Error) of gedeeltelijk gezond (503 Service Unavailable) is. Je kunt
+        ook optioneel extra informatie teruggeven in de response, zoals een
+        JSON-object met details over elke afhankelijkheid of metriek.</li>
+    <li>Kies een service voor je health check. Dit is een externe applicatie die
+        het endpoint periodiek aanroept en de resultaten registreert en rapporteert.
+        De service kan ook acties ondernemen als het endpoint een ongezonde status
+        teruggeeft, zoals het sturen van een e-mail, het maken van een logboek of
+        het starten van een herstelproces. Er zijn verschillende services
+        beschikbaar op de markt, zoals Pingdom, Uptime Robot of Healthchecks.io. Je
+        kunt ook je eigen service bouwen als je meer controle of maatwerk wilt.</li>
+    <li>
+        Test en verbeter je health check. Zodra je je health check hebt
+        geïmplementeerd, moet je hem testen om te zien of hij correct werkt en of
+        hij nuttige informatie geeft. Je kunt ook je health check verbeteren door
+        hem aan te passen aan je behoeften en feedback. Bijvoorbeeld, je kunt de
+        frequentie, de drempels of de meldingen van je health check wijzigen.
+    </li>
+</ul>
+
+<h4>Conclusie</h4>
+
+<p>Een health check voor een web API is een essentieel onderdeel van elke moderne
+    softwareontwikkeling. Het kan je helpen om de kwaliteit, de stabiliteit en de
+    prestaties van je API te waarborgen en te verbeteren. Het kan je ook helpen om
+    problemen te voorkomen of op te lossen voordat ze invloed hebben op je
+    gebruikers of klanten.
+</p>
+<p>In deze blog post heb ik uitgelegd wat een health check is, waarom het nuttig is
+    en hoe je het kunt implementeren. Bedankt voor het lezen.</p>
+
+https://www.pexels.com/photo/snowy-mountain-peak-covered-by-clouds-4091975/]]></content><author><name>Funs Janssen</name></author><category term="Microservices" /><summary type="html"><![CDATA[Hoe een health check voor je web API je kan helpen om betere software te leveren]]></summary></entry><entry><title type="html">Containers, Go Of No-Go</title><link href="/containers" rel="alternate" type="text/html" title="Containers, Go Of No-Go" /><published>2023-04-24T00:00:00+00:00</published><updated>2023-04-24T00:00:00+00:00</updated><id>/containers</id><content type="html" xml:base="/containers"><![CDATA[<h3 class="blog-title">Wanneer wel en niet kiezen voor containers?
+</h3>
+
+<p>
+    Containers zijn een vorm van besturingssysteemvirtualisatie. Met één container
+    kun je allerlei dingen uitvoeren, van een kleine microservice of een
+    kleinschalig softwareproces tot een grotere applicatie. In de container
+    bevinden zich alle benodigde uitvoerbare bestanden, binaire code, bibliotheken
+    en configuratiebestanden. In vergelijking tot virtualisatiemethoden voor
+    servers of machines bevatten containers echter geen besturingssysteemimages.
+    Hierdoor zijn ze lichter en draagbaar, met aanzienlijk minder overhead.
+</p>
+<p>
+    Containers bieden veel voordelen voor het ontwikkelen, testen en implementeren
+    van applicaties in meerdere omgevingen, van de lokale laptop van een
+    ontwikkelaar tot een on-premises datacenter tot zelfs de cloud. Containers
+    zorgen voor minder overhead, verbeterde portabiliteit, gelijkere werking, meer
+    efficiëntie en betere applicatieontwikkeling.
+</p>
+<p>Maar containers zijn niet altijd de beste oplossing voor elke situatie. Er zijn
+    ook enkele nadelen of uitdagingen waar je rekening mee moet houden als je
+    containers wilt gebruiken. Hier zijn enkele voorbeelden van wanneer je wel en
+    niet zou moeten kiezen voor containers:
+</p>
+<h4>Wanneer wel kiezen voor containers?</h4>
+<ul class="check-list">
+    <li>Als je applicaties wilt moderniseren of herstructureren voor de cloud.
+        Containers maken het mogelijk om bestaande applicaties naar modernere
+        omgevingen te migreren of te herstructureren, waarbij je gebruik kunt maken
+        van de volledige voordelen van een containerapplicatiearchitectuur.
+    </li>
+    <li>Als je microservices wilt gebruiken. Containers bieden ondersteuning voor
+        microservicearchitecturen, waarbij gedistribueerde applicaties en services
+        gemakkelijk kunnen worden geïsoleerd, geïmplementeerd en geschaald op basis
+        van afzonderlijke containerbouwstenen.</li>
+    <li>Als je DevOps wilt toepassen. Containers bieden ondersteuning voor
+        Continuous Integration en Continuous Deployment (CI/CD), waardoor
+        ontwikkelings-, test- en productiecycli kunnen worden versneld.</li>
+</ul>
+<h4>Wanneer niet kiezen voor containers?</h4>
+<ul class="check-list">
+    <li>Als je applicaties afhankelijk zijn van het besturingssysteem. Containers
+        delen hetzelfde besturingssysteem als de hostmachine, dus als je applicaties
+        specifieke besturingssysteemfuncties of -versies nodig hebben, kunnen
+        containers problemen opleveren.
+    </li>
+    <li>Als je applicaties veel resources nodig hebben. Containers hebben minder
+        overhead dan virtuele machines, maar ze hebben nog steeds resources nodig om
+        te draaien. Als je applicaties veel CPU, geheugen of schijfruimte nodig
+        hebben, kunnen containers de prestaties beïnvloeden of conflicten
+        veroorzaken met andere containers op dezelfde hostmachine.</li>
+    <li>Als je applicaties complex of monolithisch zijn. Containers zijn geschikt
+        voor het verpakken en implementeren van kleine, onafhankelijke en modulaire
+        applicaties of services. Als je applicaties complex of monolithisch zijn,
+        kan het moeilijk zijn om ze op te splitsen in containers of om ze te beheren
+        met een orkestratieplatform zoals Kubernetes.</li>
+</ul>
+
+https://www.pexels.com/photo/cargo-container-lot-906494/]]></content><author><name>Funs Janssen</name></author><category term="Containers" /><category term="Virtualisatie" /><category term="Microservices" /><category term="DevOps" /><summary type="html"><![CDATA[Wanneer wel en niet kiezen voor containers?]]></summary></entry><entry><title type="html">Correlation Ids Met ASP.NET</title><link href="/correlation-ids" rel="alternate" type="text/html" title="Correlation Ids Met ASP.NET" /><published>2023-03-15T00:00:00+00:00</published><updated>2023-03-15T00:00:00+00:00</updated><id>/correlation-ids</id><content type="html" xml:base="/correlation-ids"><![CDATA[<h3 class="blog-title">Hoe gebruik je Correlation Ids in ASP NET microservices
+</h3>
+
+<p>
+    Als je een applicatie hebt gebaseerd op een microservices architectuur, heb je
+    waarschijnlijk te maken met meerdere services die met elkaar communiceren via
+    HTTP-protocollen. Een van de uitdagingen van deze architectuur is het traceren
+    en debuggen van HTTP-verzoeken die door verschillende services heen stromen. Hoe
+    kun je bijvoorbeeld achterhalen waar een verzoek is mislukt, of hoe lang een
+    verzoek heeft geduurd om te worden afgehandeld?
+</p>
+<p>
+    Een mogelijke oplossing is om gebruik te maken van correlation ids. Dit zijn
+    unieke identificatoren die je kunt
+    gebruiken om de verschillende verzoeken en antwoorden die bij een bepaalde
+    actie horen aan elkaar te koppelen. Door correlation ids toe te voegen aan je
+    HTTP-headers, kun je de levenscyclus van een verzoek volgen en analyseren, en
+    eventuele problemen sneller opsporen en oplossen.
+</p>
+<p>In deze blog ga ik je laten zien hoe je correlation ids kunt gebruiken in
+    ASP.NET microservices. We zullen een voorbeeldproject gebruiken dat bestaat uit
+    twee ASP.NET Core Web API-projecten: een OrderService en een ProductService. De
+    OrderService is verantwoordelijk voor het afhandelen van bestellingen, en de
+    ProductService is verantwoordelijk voor het leveren van productinformatie. De
+    OrderService roept de ProductService aan om de productdetails op te halen voor
+    een gegeven bestelling.
+</p>
+<h4>Wat zijn correlation ids? Waarom zijn ze nuttig?</h4>
+<p>
+    Correlation ids zijn unieke ids die je kunt gebruiken om
+    verschillende taken te correleren aan eenzelfde macro-operatie. Door ervoor
+    te zorgen dat elk antwoord een unieke id heeft, kun je het verzoek volgen,
+    monitoren en debuggen wanneer het door meerdere services heen gaat.
+</p>
+<p>
+    Omdat verschillende servicecomponenten betrokken kunnen zijn bij de uitvoering
+    van het verzoek, heb je een methode nodig om al deze servicecomponenten te
+    koppelen aan het verzoek; d.w.z., je hebt een manier nodig om al deze
+    servicecomponenten aan het verzoek te koppelen.
+</p>
+<p>
+    Het idee is dat de service die het verzoek initieert een correlation id
+    genereert en deze doorgeeft aan de volgende service. De tweede service geeft
+    deze correlation id door aan de derde service, enzovoort. Als er een fout
+    optreedt, kan de betreffende service de foutmelding loggen samen met de
+    correlation id. Op deze manier kun je gemakkelijk achterhalen welk verzoek de
+    fout heeft veroorzaakt, en welke services erbij betrokken waren.
+</p>
+<h4>Hoe gebruik je correlation ids in ASP.NET microservices?</h4>
+<p>Om correlation ids te gebruiken in ASP.NET microservices, moet je de volgende
+    stappen uitvoeren:
+</p>
+<ul class="check-list">
+    <li>Stap 1: Genereer een correlation id voor elk inkomend verzoek in de eerste
+        service.
+    </li>
+    <li>Stap 2: Voeg de correlation id toe aan de HTTP-header van het uitgaande
+        verzoek naar
+        de volgende service.</li>
+    <li>Stap 3: Lees de correlation id uit de HTTP-header van het inkomende verzoek
+        in de
+        volgende service.</li>
+    <li>Stap 4: Herhaal stap 2 en 3 voor elke volgende service die wordt
+        aangeroepen.</li>
+    <li>Stap 5: Log de correlation id samen met eventuele foutmeldingen of andere
+        relevante
+        informatie.</li>
+</ul>
+<p>
+    Om dit te laten zien, zullen we gebruik maken van het voorbeeldproject dat
+    bestaat uit twee ASP.NET Core Web API-projecten: een OrderService en een
+    ProductService. De OrderService is verantwoordelijk voor het afhandelen van
+    bestellingen, en de ProductService is verantwoordelijk voor het leveren van
+    productinformatie. De OrderService roept de ProductService aan om de
+    productdetails op te halen voor een gegeven bestelling.
+</p>
+
+<h4>Stap 1: Genereer een correlation id voor elk inkomend verzoek in de eerste
+    service</h4>
+
+<p>Om een correlation id te genereren voor elk inkomend verzoek in de eerste service
+    (in dit gevalde OrderService), kun je gebruik maken van een middleware
+    die de correlation id genereert en toevoegt aan de HTTP-context. Een middleware
+    is een stukje code dat wordt uitgevoerd tussen het ontvangen en het
+    verzenden van een HTTP-verzoek.
+</p>
+<p>
+    De CorrelationIdMiddleware-klasse die we gaan gebruiken ziet er als volgt uit:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+public class CorrelationIdMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public CorrelationIdMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task Invoke(HttpContext context)
+    {
+        // Haal de scoped Context op.
+        var correlationContext = context.RequestServices.GetRequiredService<CorrelationIdContext>();
+
+        // Check of er al een correlation id meegestuurd is.
+        if (context.Request.Headers.TryGetValue(CorrelationIdContext.CorrelationIdHeaderKey, out var correlationIds) && correlationIds.Any())
+        {
+            correlationContext.CorrelationId = correlationIds.First();
+        }
+
+        // Voeg het correlation id toe aan de response headers
+        context.Response.OnStarting(state => {
+            var httpContext = (HttpContext)state;
+            httpContext.Response.Headers.Add(CorrelationIdContext.CorrelationIdHeaderKey, correlationContext.CorrelationId);
+            return Task.CompletedTask;
+        }, context);
+
+        // Voeg het correlation id toe aan de Serilog LogContext. Zo kan het id aan iedere log regel binnen de scope worden toegevoegd.
+        using (LogContext.PushProperty("CorrelationId", correlationContext.CorrelationId))
+        {
+            await _next.Invoke(context);
+        }
+    }
+}
+</code>
+</pre>
+<p>
+    In deze middleware maken we gebruik van een CorrelationIdContext. Deze
+    registreren we als scoped service, zodat er 1 context is per request. Deze
+    klasse ziet er als volgt uit:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+public class CorrelationIdContext
+{
+    public const string CorrelationIdHeaderKey = "X-Correlation-Id";
+
+    public string CorrelationId { get; set; } = Guid.NewGuid().ToString();
+}
+</code>
+</pre>
+<p>
+    Om deze middleware en context te registreren in de pipeline, moet je de volgende
+    regels toevoegen aan de Configure-methode en de ConfigureServices-methode in de
+    Startup-klasse van de
+    OrderService:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+// Configure
+app.UseMiddleware<CorrelationIdMiddleware>();
+
+// Configure Services
+services.AddScoped<CorrelationIdContext>();
+</code>
+</pre>
+
+<h4>Stap 2: Voeg de correlation id toe aan de HTTP-header van het uitgaande verzoek
+    naar de volgende service</h4>
+<p>
+    Om de correlation id toe te voegen aan de HTTP-header van het uitgaande verzoek
+    naar de volgende service (in dit geval de ProductService), kun je gebruik maken
+    van een HttpClientFactory die een HttpClient creëert met een vooraf
+    geconfigureerde header.
+</p>
+<p>
+    Om een HttpClientFactory te gebruiken om de correlation id toe te voegen aan de
+    HTTP-header van het uitgaande verzoek, kun je de volgende stappen uitvoeren:
+</p>
+<ul class="check-list">
+    <li>Registreer de HttpClientFactory-service in de ConfigureServices-methode in
+        de Startup-klasse van de OrderService. Gebruik hiervoor de
+        AddHttpClient-methode met een naam en een configuratie-delegate. In de
+        configuratie-delegate, stel de BaseAddress in op de URL van de
+        ProductService en voeg een delegating handler toe die de correlation id
+        leest uit de HTTP-context en toevoegt aan de header van het uitgaande
+        verzoek.</li>
+    <li>Injecteer de HttpClient in de controller of service die het
+        uitgaande verzoek moet maken.</li>
+</ul>
+<p>
+    De code om de HttpClient te registreren ziet er als volgt uit:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+services.AddHttpClient<OrderService>(client => {
+    client.BaseAddress = new Uri(“https://localhost:5001”);
+}).AddHttpMessageHandler<CorrelationIdHandler>();
+</code>
+</pre>
+<p>
+    De code om de CorrelationIdHandler te implementeren ziet er als volgt
+    uit:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+public class CorrelationIdHandler : DelegatingHandler
+{
+    private readonly IHttpContextAccessor _httpContextAccessor;
+
+    public CorrelationIdHandler(IHttpContextAccessor httpContextAccessor)
+    {
+        _httpContextAccessor = httpContextAccessor;
+    }
+
+    protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+    {
+        var context = _httpContextAccessor.HttpContext?.RequestServices?.GetService<CorrelationIdContext>();
+
+        if (context != null)
+        {
+            request.Headers.Add(CorrelationIdContext.CorrelationIdHeaderKey, context.CorrelationId);
+        }
+
+        return base.SendAsync(request, cancellationToken);
+    }
+}
+</code>
+</pre>
+
+<h4>Stap 3: Lees de correlation id uit de HTTP-header van het inkomende verzoek in
+    de volgende service</h4>
+
+<p>
+    Om het correlation id te lezen uit de HTTP-header van het inkomende verzoek in
+    de
+    volgende service (in dit geval de ProductService), kun je gebruik maken van een
+    middleware component die de correlation id leest uit de header en toevoegt aan
+    de HTTP-context. Dit is vergelijkbaar met de middleware die we hebben
+    gemaakt voor het genereren van correlation ids in de eerste service. We kunnen
+    dan ook exact dezelfde middleware gebruiken en toevoegen aan het project.
+</p>
+<h4>Stap 4: Herhaal stap 2 en 3 voor elke volgende service die wordt aangeroepen
+</h4>
+<p>
+    Als je meer dan twee services hebt die met elkaar communiceren via
+    HTTP-protocollen, moet je stap 2 en 3 herhalen voor elke volgende service die
+    wordt aangeroepen. Op deze manier kun je ervoor zorgen dat elke service de
+    correlation id ontvangt en doorgeeft aan de volgende service.
+</p>
+<h4>Stap 5: Log de correlation id samen met eventuele foutmeldingen of andere
+    relevante informatie</h4>
+<p>
+    Om gebruik te maken van de correlation ids voor het traceren en debuggen van je
+    HTTP-verzoeken, moet je ervoor zorgen dat je ze logt samen met eventuele
+    foutmeldingen of andere relevante informatie. Op deze manier kun je gemakkelijk
+    achterhalen welk verzoek de fout heeft veroorzaakt, en welke services erbij
+    betrokken waren.
+</p>
+<p>In dit voorbeeld maken we gebruik van Serilog. We hebben het correlation id
+    toegevoegd aan de LogContext. Maar in sommige gevallen is er configuratie nodig
+    om deze ook te loggen. Wanneer je gebruik maakt van bijvoorbeeld Splunk is dit
+    niet nodig. Wanneer je een output template gebruikt zou je [CorrelationId]
+    hieraan toe kunnen voegen.
+</p>
+<h4>Conclusie</h4>
+<p>
+    In deze blog heb ik je laten zien hoe je correlation ids kunt gebruiken in
+    ASP.NET microservices. We hebben een voorbeeldproject gebruikt dat bestaat uit
+    twee ASP.NET Core Web API-projecten: een OrderService en een ProductService. De
+    OrderService is verantwoordelijk voor het afhandelen van bestellingen, en de
+    ProductService is verantwoordelijk voor het leveren van productinformatie. De
+    OrderService roept de ProductService aan om de productdetails op te halen voor
+    een gegeven bestelling.
+</p>
+<p>Ik hoop dat deze blog je heeft geholpen om te begrijpen wat correlation ids
+    zijn, waarom ze nuttig zijn, en hoe je ze kunt gebruiken in ASP.NET
+    microservices.</p>
+
+https://www.pexels.com/photo/rock-formation-2335126/]]></content><author><name>Funs Janssen</name></author><category term="CorrelationIds" /><category term="ASP.NET" /><category term="Microservices" /><category term="Middleware" /><summary type="html"><![CDATA[Hoe gebruik je Correlation Ids in ASP NET microservices]]></summary></entry><entry><title type="html">SpecFlow Met ASP.NET</title><link href="/specflow" rel="alternate" type="text/html" title="SpecFlow Met ASP.NET" /><published>2023-02-21T00:00:00+00:00</published><updated>2023-02-21T00:00:00+00:00</updated><id>/specflow</id><content type="html" xml:base="/specflow"><![CDATA[<h3 class="blog-title">De voordelen van SpecFlow in combinatie met ASP NET Api's
+</h3>
+
+<p>
+    Als je werkt met ASP.NET Apis, weet je hoe belangrijk het is om je code goed te
+    testen, te documenteren en te communiceren. Je wilt immers dat je Apis
+    betrouwbaar,
+    begrijpelijk en waardevol zijn voor je gebruikers en stakeholders. Maar hoe kun
+    je
+    dat op een effectieve en efficiënte manier doen?
+</p>
+<p>
+    Een mogelijke oplossing is om gebruik te maken van SpecFlow, een BDD-framework
+    voor
+    .NET dat je helpt om je acceptatiecriteria te formuleren in natuurlijke taal, en
+    ze
+    te automatiseren met behulp van stappen definities. Met SpecFlow kun je:
+</p>
+<ul class="check-list">
+    <li>Je ASP.NET Apis testen op een gedragsgerichte manier, door scenario's te
+        beschrijven
+        die de verwachte resultaten en acties van je Apis definiëren.</li>
+    <li>Je documentatie genereren uit je scenario's, zodat je altijd een up-to-date
+        en
+        leesbare beschrijving hebt van je Apis.</li>
+    <li>Je communicatie verbeteren met je teamleden, klanten en stakeholders, door
+        een
+        gemeenschappelijke taal te gebruiken om je Apis te specificeren en te
+        testen.</li>
+</ul>
+<p>
+    In deze blog zal ik je laten zien hoe je SpecFlow kunt gebruiken in
+    combinatie
+    met ASP.NET om deze voordelen te behalen. We zullen een voorbeeldproject
+    gebruiken
+    dat een eenvoudige webapplicatie is waar gebruikers boeken kunnen zoeken en
+    kopen.
+    We zullen ons richten op de API-laag van de applicatie, die verantwoordelijk is
+    voor
+    het leveren van data en services.
+</p>
+
+<h4>Wat is SpecFlow?</h4>
+
+<p>SpecFlow is een BDD-framework voor .NET dat gebaseerd is op Cucumber. BDD staat
+    voor Behaviour Driven Development, een softwareontwikkelingsmethode die zich
+    richt
+    op het beschrijven en testen van het gewenste gedrag van een applicatie.
+</p>
+<p>
+    Met SpecFlow kun je je acceptatiecriteria schrijven in feature files, die
+    tekstbestanden zijn met de extensie .feature. In deze bestanden beschrijf je een
+    feature (een functionaliteit of een eigenschap van je applicatie) en een of meer
+    scenario's (concrete voorbeelden van hoe de feature werkt of zou moeten werken).
+    Je
+    gebruikt hiervoor de taal Gherkin, die een eenvoudige en gestructureerde syntax
+    heeft met keywords zoals Gegeven, Als, Dan, En en Maar. Je kunt deze schrijven
+    in
+    iedere gewenste taal. (bijvoorbeeld Nederlands of Engels) Het beste is dan ook
+    om
+    de taal te kiezen die het beste past bij je team.
+</p>
+<p>
+    Een voorbeeld van een feature file voor de boekenwinkel applicatie is:
+</p>
+<pre class="line-numbers">
+<code class="language-gherkin">
+Feature: Boek Details 
+    Als een gebruiker
+    Wil ik de details van een geselecteerd boek kunnen inzien
+    Zodat ik kan besluiten of ik het wil kopen
+
+Scenario: Boek details bekijken
+    Gegeven de volgende boeken zijn beschikbaar
+    | Id | Titel                    | Auteur      | Prijs |
+    | 1  | The BDD Book             | Gojko Adzic | 25    |
+    | 2  | Specification by Example | Gojko Adzic | 30    |
+    | 3  | The Cucumber Book        | Matt Wynne  | 35    | 
+    Als ik de details pagina open voor boek met id 2
+    Dan zie ik de volgende informatie
+    | Titel                    | Auteur      | Prijs |
+    | Specification by Example | Gojko Adzic | 30    |
+</code>
+</pre>
+<p>
+    Met SpecFlow kun je deze scenario's automatiseren met behulp van step
+    definitions, die .NET code zijn die de stappen uitvoert die in de feature files
+    zijn beschreven. Je kunt dit combineren met verschillende tools en frameworks,
+    zoals Selenium, Playwright, Docker of Boa Constrictor.
+</p>
+<p>
+    Een voorbeeld van een step definition file voor de boekenwinkel applicatie is:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+[Binding]
+public class BookDetailsSteps
+{
+    private readonly HttpClient _httpClient;
+    private readonly TestContext _testContext;
+    private HttpResponseMessage _response;
+
+    public BookDetailsSteps(HttpClient httpClient, TestContext testContext)
+    {
+        _httpClient = httpClient;
+        _testContext = testContext;
+    }
+
+    [Given(@"de volgende boeken zijn beschikbaar")]
+    public async Task GivenTheFollowingBooks(Table table) 
+    { 
+        foreach (var row in table.Rows) 
+        { 
+            var book = new Book 
+            { 
+                Id = int.Parse(row[“Id”]),
+                Title = row[“Titel”],
+                Author = row[“Auteur”],
+                Price = decimal.Parse(row[“Prijs”]) 
+            };
+
+            await _httpClient.PostAsJsonAsync(“/api/books”, book); 
+        } 
+    }
+
+    [When(@"ik de details pagina open voor boek met id (.*)")]
+    public async Task WhenIOpenTheDetailsPageForBookWithId(int id)
+    {
+        _response = await _httpClient.GetAsync($"/api/books/{id}");
+    }
+
+    [Then(@"zie ik de volgende informatie")]
+    public async Task ThenIShouldSeeTheFollowingInformation(Table table)
+    {
+        var expectedBook = table.CreateInstance<Book>();
+        var actualBook = await _response.Content.ReadFromJsonAsync<Book>();
+        actualBook.Should().BeEquivalentTo(expectedBook);
+    }
+}
+
+</code>
+</pre>
+
+<p>
+    Met deze step definitions kun je je scenario's uitvoeren en controleren of je
+    ASP.NET Apis het verwachte gedrag vertonen. Je kunt hiervoor verschillende
+    testrunners gebruiken, zoals SpecFlow+ Runner, NUnit of xUnit.
+</p>
+<p>
+    Wanneer je een ASP.Net api wilt testen is het handig als de api ook automatisch
+    word opgestart binnen je test. Je kunt dit doen door onderstaande Binding toe te
+    voegen aan je test project:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+[Binding]
+public class ApiHooks
+{
+    private const string _appSettingsFile = "appsettings.json";
+
+    private readonly IObjectContainer _objectContainer;
+
+    public ApiHooks(IObjectContainer objectContainer)
+    {
+        _objectContainer = objectContainer;
+    }
+
+    [BeforeScenario]
+    public async Task RegisterServices()
+    {
+        var factory = GetWebApplicationFactory();
+
+        _objectContainer.RegisterInstanceAs(factory);
+    }
+
+    private WebApplicationFactory<Program> GetWebApplicationFactory() =>
+        new WebApplicationFactory<Program>()
+            .WithWebHostBuilder(builder =>
+            {
+                builder.ConfigureAppConfiguration((context, config) =>
+                {
+                    // Hier kun je app settings overschrijven voor je testen
+                    config.AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), _appSettingsFile));
+                });
+
+                builder.ConfigureTestServices(services =>
+                {
+                    // Hier kun je services registreren specfifiek voor je testen
+                });
+            });
+}
+</code>
+</pre>
+<p>
+    Door deze code toe te voegen kun je de WebApplicationFactory injecteren in je
+    test code. Om vervolgens aan de factory een http client op te vragen. Die is
+    automatisch gekoppeld aan je test api. Pas hiervoor de constructor in de
+    StepDefinitions aan op de
+    volgende manier:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+[Binding]
+public class BookDetailsSteps
+{
+    public BookDetailsSteps(WebApplicationFactory<Program> factory, TestContext testContext)
+    {
+        _httpClient = factory.CreateDefaultClient(new Uri("http://localhost"));
+        _testContext = testContext;
+    }
+}
+</code>
+</pre>
+<h4>
+    Wat zijn de voordelen van SpecFlow en ASP.NET?
+</h4>
+<p>
+    Door SpecFlow te gebruiken in combinatie met ASP.NET kun je verschillende
+    voordelen behalen, zoals:
+</p>
+<ul class="check-list">
+    <li>Je kunt je Apis testen op een gedragsgerichte manier, door scenario's te
+        beschrijven die de verwachte resultaten en acties van je Apis definiëren.
+        Dit helpt je om je te richten op de waarde die je Apis leveren voor de
+        gebruiker, in plaats van op de technische details van de implementatie.</li>
+    <li>Je kunt je documentatie genereren uit je scenario's, zodat je altijd een
+        up-to-date en leesbare beschrijving hebt van je Apis. Dit helpt je om je
+        Apis te documenteren op een manier die begrijpelijk is voor iedereen die
+        erbij betrokken is of er belang bij heeft, zoals je collega's, klanten en
+        stakeholders.</li>
+    <li>Je kunt je communicatie verbeteren met je teamleden, klanten en
+        stakeholders, door een gemeenschappelijke taal te gebruiken om je Apis te
+        specificeren en te testen. Dit helpt je om misverstanden en ambiguïteiten te
+        voorkomen, en om sneller feedback en validatie te krijgen.</li>
+</ul>
+
+<h4>Conclusie</h4>
+
+<p>
+    In deze blog heb ik je laten zien hoe je SpecFlow kunt gebruiken in
+    combinatie met ASP.NET om beter te testen, te documenteren en te communiceren
+    over je Apis. We hebben een voorbeeldproject gebruikt dat een eenvoudige
+    webapplicatie is waar gebruikers boeken kunnen zoeken en kopen. We hebben ons
+    gericht op de API-laag van de applicatie, die verantwoordelijk is voor het
+    leveren van data en services via HTTP-protocollen.
+</p>
+<p>
+    Ik hoop dat deze blog je heeft geïnspireerd om SpecFlow te proberen in je eigen
+    ASP.NET projecten. Als je meer wilt weten over SpecFlow, kun je de <a
+        href="https://specflow.org/">officiële</a>
+    documentatie raadplegen, of een van de vele tutorials en artikelen die online
+    beschikbaar zijn .
+</p>
+
+https://www.pexels.com/photo/white-and-black-mountain-wallpaper-933054/]]></content><author><name>Funs Janssen</name></author><category term="Specflow" /><category term="ASP.NET" /><category term="BDD" /><category term="API-Testing" /><category term="Gherkin" /><summary type="html"><![CDATA[De voordelen van SpecFlow in combinatie met ASP NET Api's]]></summary></entry><entry><title type="html">Angular Vs Blazor</title><link href="/angular-blazor" rel="alternate" type="text/html" title="Angular Vs Blazor" /><published>2023-01-02T00:00:00+00:00</published><updated>2023-01-02T00:00:00+00:00</updated><id>/angular-blazor</id><content type="html" xml:base="/angular-blazor"><![CDATA[<h3 class="blog-title">Angular vs Blazor: Wat te kiezen voor jouw volgende Web Project
+</h3>
+<p>
+    Als je een web developer bent, heb je waarschijnlijk gehoord van Angular en
+    Blazor. Dit zijn twee populaire frameworks voor het bouwen van moderne web
+    applicaties. Maar wat zijn de verschillen tussen deze twee frameworks? En welke
+    moet je kiezen voor jouw volgende web project? In deze blog zal ik een
+    vergelijking maken tussen Angular en Blazor op basis van verschillende criteria,
+    zoals:
+</p>
+<ul class="check-list">
+    <li>De taal en het platform</li>
+    <li>De architectuur en de componenten</li>
+    <li>De ondersteuning voor SPA en PWA</li>
+    <li>De interoperabiliteit met JavaScript</li>
+    <li>De prestaties en de productiviteit</li>
+</ul>
+
+<h4>De taal en het platform</h4>
+<p>
+    Een van de belangrijkste verschillen tussen Angular en Blazor is de taal en het
+    platform waarop ze gebaseerd zijn. Angular is een JavaScript-based framework dat
+    draait op de browser. Het maakt gebruik van TypeScript, een superset van
+    JavaScript die statische typen en object-georiënteerd programmeren toevoegt.
+    Angular is een onderdeel van het Node.js ecosysteem, wat betekent dat je veel
+    tools en bibliotheken kunt gebruiken die beschikbaar zijn voor JavaScript
+    ontwikkelaars.
+</p>
+<p>
+    Blazor is een C#-based framework dat draait op .NET. Het maakt gebruik van
+    WebAssembly, een technologie die .NET code kan compileren en uitvoeren in de
+    browser. Blazor is een onderdeel van het ASP.NET Core ecosysteem, wat betekent
+    dat je veel tools en bibliotheken kunt gebruiken die beschikbaar zijn voor .NET
+    ontwikkelaars.
+</p>
+<h4>De architectuur en de componenten</h4>
+<p>
+    Een ander verschil tussen Angular en Blazor is de architectuur en de componenten
+    die ze gebruiken om web applicaties te bouwen. Beide frameworks zijn gebaseerd
+    op het concept van component-based development, wat betekent dat je je
+    applicatie kunt opdelen in herbruikbare stukjes UI logica die met elkaar
+    communiceren via inputs en outputs.
+</p>
+<p>
+    Angular maakt gebruik van een hiërarchische component tree, waarbij elke
+    component een template (HTML), een class (TypeScript) en een style (CSS) heeft.
+    Angular biedt ook directives, pipes en services om extra functionaliteit toe te
+    voegen aan je componenten. Angular volgt het model-view-viewmodel (MVVM)
+    patroon, waarbij je data kunt binden tussen je view (template) en je viewmodel
+    (class).
+</p>
+<p>
+    Blazor maakt gebruik van een vlakke component tree, waarbij elke component een
+    Razor-bestand heeft dat HTML en C# code combineert. Blazor biedt ook parameters,
+    cascading values, event handlers en dependency injection om extra
+    functionaliteit toe te voegen aan je componenten. Blazor volgt een
+    model-view-controller (MVC) patroon, waarbij je data kunt doorgeven tussen je
+    controller (C# code) en je view (Razor-bestand).
+</p>
+
+<h4>
+    De ondersteuning voor SPA en PWA
+</h4>
+<p>
+    Een ander verschil tussen Angular en Blazor is de ondersteuning voor single-page
+    applications (SPA) en progressive web applications (PWA). SPA's zijn web
+    applicaties
+    die bestaan uit één HTML-pagina die dynamisch wordt bijgewerkt zonder de pagina
+    te
+    herladen. PWA's zijn web applicaties die zich gedragen als native apps, met
+    functies
+    zoals offline werken, push notificaties en installatie op het startscherm.
+</p>
+<p>
+    Angular heeft een ingebouwde ondersteuning voor SPA's, aangezien het framework
+    is
+    ontworpen om snelle en responsieve web applicaties te bouwen. Angular heeft ook
+    een
+    eenvoudige manier om een bestaande Angular app om te zetten in een PWA, door
+    gebruik
+    te maken van het <a href="https://angular.io/guide/service-worker-getting-started">@angular/pwa
+        pakket.</a> Dit pakket voegt automatisch de benodigde
+    bestanden en configuraties toe om een service worker te registreren, een web app
+    manifest te genereren en de assets te cachen.
+</p>
+<p>
+    Blazor heeft ook een ingebouwde ondersteuning voor SPA's, aangezien het
+    framework
+    gebruik maakt van WebAssembly om .NET code uit te voeren in de browser. Blazor
+    heeft
+    echter geen ingebouwde ondersteuning voor PWA's, wat betekent dat je zelf een
+    service worker en een web app manifest moet toevoegen en configureren. Er zijn
+    wel
+    enkele hulpmiddelen beschikbaar om dit proces te vergemakkelijken, zoals het
+    Blazor.PWA.MSBuild pakket of de Blazor WebAssembly PWA template.
+</p>
+<h4>
+    De interoperabiliteit met JavaScript
+</h4>
+<p>
+    Een ander verschil tussen Angular en Blazor is de interoperabiliteit met
+    JavaScript
+    (JS). JS interop is het vermogen om JS functies aan te roepen vanuit .NET
+    methoden
+    en .NET methoden aan te roepen vanuit JS functies. Dit is nuttig om gebruik te
+    maken
+    van bestaande JS bibliotheken of om toegang te krijgen tot browser API's die
+    niet
+    beschikbaar zijn in .NET.
+</p>
+<p>
+    Angular heeft een natuurlijke interoperabiliteit met JS, aangezien het framework
+    zelf gebaseerd is op JS. Je kunt eenvoudig JS code schrijven of importeren in je
+    TypeScript bestanden en deze aanroepen vanuit je Angular componenten. Je kunt
+    ook
+    TypeScript decorators gebruiken om .NET methoden bloot te stellen aan JS code.
+</p>
+<p>
+    Blazor heeft een kunstmatige interoperabiliteit met JS, aangezien het framework
+    gebaseerd is op .NET. Je moet gebruik maken van speciale klassen en methoden om
+    JS
+    code aan te roepen of te importeren in je C# bestanden en deze aan te roepen
+    vanuit
+    je Blazor componenten. Je moet ook gebruik maken van speciale attributen om .NET
+    methoden bloot te stellen aan JS code.
+</p>
+<h4>
+    De prestaties en de productiviteit
+</h4>
+<p>
+    Een laatste verschil tussen Angular en Blazor is de prestaties en de
+    productiviteit
+    van de frameworks. Prestaties hebben betrekking op hoe snel en efficiënt de web
+    applicaties werken, zowel in de browser als op de server. Productiviteit heeft
+    betrekking op hoe snel en gemakkelijk de web applicaties ontwikkeld kunnen
+    worden,
+    zowel door individuele ontwikkelaars als door teams.
+</p>
+<p>
+    Angular heeft een goede reputatie op het gebied van prestaties, vooral dankzij
+    de
+    change detection strategie die gebruik maakt van zones om wijzigingen in de
+    component tree te detecteren en te verwerken. Angular heeft ook verschillende
+    opties
+    om de applicatie te optimaliseren, zoals lazy loading, code splitting, tree
+    shaking
+    en ahead-of-time (AOT) compilatie. Angular heeft echter ook een aantal nadelen
+    op
+    het gebied van prestaties, zoals de grootte van het framework zelf, de
+    complexiteit
+    van de build pipeline en de afhankelijkheid van JavaScript.
+</p>
+<p>
+    Blazor heeft een veelbelovende reputatie op het gebied van prestaties, vooral
+    dankzij het gebruik van WebAssembly om .NET code uit te voeren in de browser.
+    WebAssembly is sneller dan JavaScript in veel scenario's, omdat het een
+    gecompileerde binaire code is die direct door de browser kan worden
+    geïnterpreteerd.
+    Blazor heeft echter ook een aantal nadelen op het gebied van prestaties, zoals
+    de
+    opstarttijd van het framework zelf, de grootte van de .NET runtime en de DLL's
+    en de
+    interoperabiliteit met JavaScript.
+</p>
+<p>
+    Angular heeft een goede reputatie op het gebied van productiviteit, vooral
+    dankzij
+    de Angular CLI die veel taken automatiseert, zoals het genereren van
+    componenten,
+    het uitvoeren van tests en het bouwen van applicaties. Angular heeft ook een
+    rijke
+    set aan tools en bibliotheken die beschikbaar zijn voor JavaScript
+    ontwikkelaars,
+    zoals VS Code, Angular Material, RxJS en NgRx. Angular heeft echter ook een
+    aantal
+    nadelen op het gebied van productiviteit, zoals de leercurve van het framework
+    zelf,
+    de boilerplate code die nodig is voor sommige functies en de compatibiliteit met
+    verschillende versies.
+</p>
+<p>
+    Blazor heeft een veelbelovende reputatie op het gebied van productiviteit,
+    vooral
+    dankzij het gebruik van C# als programmeertaal die veel ontwikkelaars al kennen
+    en
+    waarderen. Blazor heeft ook een rijke set aan tools en bibliotheken die
+    beschikbaar
+    zijn voor .NET ontwikkelaars, zoals Visual Studio, Blazorise, Blazored en
+    FluentValidation. Blazor heeft echter ook een aantal nadelen op het gebied van
+    productiviteit, zoals de volwassenheid van het framework zelf, de beperkte
+    ondersteuning voor sommige functies en de schaarste aan bronnen en documentatie.
+</p>
+
+<h4>Conclusie</h4>
+
+<p>In deze blog heb ik een vergelijking gemaakt tussen Angular en Blazor, twee
+    populaire frameworks voor het bouwen van moderne web applicaties. We hebben
+    gekeken naar de verschillen op basis van verschillende criteria.
+</p>
+<p>
+    We hebben gezien dat er geen eenduidig antwoord is op de vraag welk framework
+    beter is. Het hangt allemaal af van je persoonlijke voorkeur, je ervaring, je
+    doelstellingen en je context. Angular en Blazor hebben elk hun eigen voor- en
+    nadelen, hun eigen sterktes en zwaktes, hun eigen fans en critici.
+</p>
+<p>
+    Het belangrijkste is om beide frameworks een kans te geven, ze uit te proberen,
+    ze te leren kennen en ze te vergelijken. Alleen zo kun je een weloverwogen
+    beslissing maken over welk framework het beste past bij jouw volgende web
+    project.
+</p>
+
+https://www.pexels.com/photo/scenic-view-of-mountains-during-dawn-1261728/]]></content><author><name>Funs Janssen</name></author><category term="Angular" /><category term="Blazor" /><category term="WebAssembly" /><category term="WebDevelopment" /><summary type="html"><![CDATA[Angular vs Blazor: Wat te kiezen voor jouw volgende Web Project Als je een web developer bent, heb je waarschijnlijk gehoord van Angular en Blazor. Dit zijn twee populaire frameworks voor het bouwen van moderne web applicaties. Maar wat zijn de verschillen tussen deze twee frameworks? En welke moet je kiezen voor jouw volgende web project? In deze blog zal ik een vergelijking maken tussen Angular en Blazor op basis van verschillende criteria, zoals: De taal en het platform De architectuur en de componenten De ondersteuning voor SPA en PWA De interoperabiliteit met JavaScript De prestaties en de productiviteit]]></summary></entry></feed>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>FJAN IT | SpecFlow Met ASP.NET</title>
+	
+    <meta property="og:title" content="FJAN IT | SpecFlow Met ASP.NET" />
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+	<!-- Stylesheets -->
+	<link href="/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/css/responsive.css" rel="stylesheet">
+	<!-- Custom style -->
+	<link href="/assets/css/custom-style.css" rel="stylesheet">
+	<link href="/assets/css/prism.css" rel="stylesheet" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+	<!-- Color Themes -->
+	<link id="theme-color-file" href="/assets/css/color-themes/default-color.css" rel="stylesheet">
+
+	<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+
+	<!-- Responsive -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNC8KRRDBS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QNC8KRRDBS');
+</script>
+<body>
+
+	<div class="page-wrapper">
+
+		<!-- Main Header -->
+		<header class="main-header header-style-three">
+
+			<!-- Header Lower -->
+			<div class="header-lower">
+
+				<div class="auto-container">
+					<div class="inner-container d-flex justify-content-between align-items-center">
+
+						<!-- Logo Box -->
+						<div class="logo-box d-flex">
+							<div class="logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo-3.webp" alt=""
+										title=""></a></div>
+						</div>
+
+						<div class="nav-outer d-flex align-items-center">
+
+							<!-- Main Menu -->
+							<nav class="main-menu show navbar-expand-md">
+								<div class="navbar-header">
+									<button class="navbar-toggler" type="button" data-toggle="collapse"
+										data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+										aria-expanded="false" aria-label="Toggle navigation">
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+
+								<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+									<ul class="navigation clearfix">
+										<li><a href="/">Home</a></li>
+										<li><a href="/blog">Blog</a></li>
+										<li class="dropdown"><a href="#">Cases</a>
+											<ul>
+												<li><a href="/cases">Cases</a></li>
+												<li><a href="/cases/mybusinesscard">MyBusinesscard</a></li>
+											</ul>
+										</li>
+
+										<li><a href="/contact">Contact</a></li>
+									</ul>
+								</div>
+
+							</nav>
+							<!-- Main Menu End-->
+
+						</div>
+
+						<!-- Outer Box -->
+						<div class="outer-box d-flex align-items-center">
+
+							<!-- Phone Box -->
+							<div class="header-phone">
+								<div class="header-phone_inner">
+									<span class="header-phone_icon flaticon-telephone"></span>
+									Telefoonnummer <br>
+									<a href="tel:+31657842820">(+31) 657 842 820 bellen</a>
+								</div>
+							</div>
+
+							<!-- Mobile Navigation Toggler -->
+							<div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
+										alt="" /></span></div>
+
+						</div>
+						<!-- End Outer Box -->
+
+					</div>
+
+				</div>
+			</div>
+			<!-- End Header Lower -->
+
+			<!-- Sticky Header  -->
+			<div class="sticky-header">
+				<div class="auto-container">
+					<div class="d-flex justify-content-between align-items-center">
+						<!-- Logo -->
+						<div class="logo">
+							<a href="/" title=""><img class="fjan-logo" src="/assets/images/logo.webp" alt="" title=""></a>
+						</div>
+
+						<!-- Right Col -->
+						<div class="right-box">
+							<!-- Main Menu -->
+							<nav class="main-menu">
+								<!--Keep This Empty / Menu will come through Javascript-->
+							</nav>
+							<!-- Main Menu End-->
+
+							<!-- Mobile Navigation Toggler -->
+							<div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
+										alt="" /></span></div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- End Sticky Menu -->
+
+			<!-- Mobile Menu  -->
+			<div class="mobile-menu">
+				<div class="menu-backdrop"></div>
+				<div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>
+				<nav class="menu-box">
+					<div class="nav-logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo.webp" alt="" title=""></a></div>
+					<div class="menu-outer">
+						<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+				</nav>
+			</div>
+			<!-- End Mobile Menu -->
+
+		</header>
+		<!-- End Main Header -->
+
+		<!-- Page Title -->
+		<section class="page-title" style="background-image:url(/assets/images/background/3.webp)">
+			<div class="auto-container">
+				<h1>SpecFlow Met ASP.NET</h1>
+				<ul class="bread-crumb clearfix">
+					<li><a href="/">Home</a></li>
+					<li>SpecFlow Met ASP.NET</li>
+				</ul>
+			</div>
+		</section>
+		<!-- End Page Title -->
+
+		<!-- Sidebar Page Container -->
+<div class="sidebar-page-container">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <!-- Content Side -->
+            <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                <div class="blog-detail">
+                    <div class="inner-box">
+                        <div class="image">
+                            <div class="tag">Testing</div>
+                            <img src="/assets/images/gallery/specflow.webp" alt="" />
+                        </div>
+                        <div class="lower-content">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="post-info">
+                                    <div class="post-info_image">
+                                        <img src="/assets/images/resource/author-1.webp" alt="" />
+                                    </div>
+                                    21 Februari 2023<br>
+                                    door <span>Funs Janssen</span>
+                                </div>
+                                <!-- Social Box -->
+                                <ul class="social-box">
+                                    <li><a href="https://www.facebook.com/sharer.php?u=&t=" target="_blank"
+                                            class="fb-share fa fa-facebook-f"></a></li>
+                                    <li><a href="https://twitter.com/share?url=&title=" target="_blank"
+                                            class="t-share fa fa-twitter"></a></li>
+                                    <li><a href="https://api.whatsapp.com/send?text=" target="_blank"
+                                            class="wa-share fa fa-whatsapp"></a></li>
+                                </ul>
+                            </div>
+
+                            <h3 class="blog-title">De voordelen van SpecFlow in combinatie met ASP NET Api's
+</h3>
+
+<p>
+    Als je werkt met ASP.NET Apis, weet je hoe belangrijk het is om je code goed te
+    testen, te documenteren en te communiceren. Je wilt immers dat je Apis
+    betrouwbaar,
+    begrijpelijk en waardevol zijn voor je gebruikers en stakeholders. Maar hoe kun
+    je
+    dat op een effectieve en efficiënte manier doen?
+</p>
+<p>
+    Een mogelijke oplossing is om gebruik te maken van SpecFlow, een BDD-framework
+    voor
+    .NET dat je helpt om je acceptatiecriteria te formuleren in natuurlijke taal, en
+    ze
+    te automatiseren met behulp van stappen definities. Met SpecFlow kun je:
+</p>
+<ul class="check-list">
+    <li>Je ASP.NET Apis testen op een gedragsgerichte manier, door scenario's te
+        beschrijven
+        die de verwachte resultaten en acties van je Apis definiëren.</li>
+    <li>Je documentatie genereren uit je scenario's, zodat je altijd een up-to-date
+        en
+        leesbare beschrijving hebt van je Apis.</li>
+    <li>Je communicatie verbeteren met je teamleden, klanten en stakeholders, door
+        een
+        gemeenschappelijke taal te gebruiken om je Apis te specificeren en te
+        testen.</li>
+</ul>
+<p>
+    In deze blog zal ik je laten zien hoe je SpecFlow kunt gebruiken in
+    combinatie
+    met ASP.NET om deze voordelen te behalen. We zullen een voorbeeldproject
+    gebruiken
+    dat een eenvoudige webapplicatie is waar gebruikers boeken kunnen zoeken en
+    kopen.
+    We zullen ons richten op de API-laag van de applicatie, die verantwoordelijk is
+    voor
+    het leveren van data en services.
+</p>
+
+<h4>Wat is SpecFlow?</h4>
+
+<p>SpecFlow is een BDD-framework voor .NET dat gebaseerd is op Cucumber. BDD staat
+    voor Behaviour Driven Development, een softwareontwikkelingsmethode die zich
+    richt
+    op het beschrijven en testen van het gewenste gedrag van een applicatie.
+</p>
+<p>
+    Met SpecFlow kun je je acceptatiecriteria schrijven in feature files, die
+    tekstbestanden zijn met de extensie .feature. In deze bestanden beschrijf je een
+    feature (een functionaliteit of een eigenschap van je applicatie) en een of meer
+    scenario's (concrete voorbeelden van hoe de feature werkt of zou moeten werken).
+    Je
+    gebruikt hiervoor de taal Gherkin, die een eenvoudige en gestructureerde syntax
+    heeft met keywords zoals Gegeven, Als, Dan, En en Maar. Je kunt deze schrijven
+    in
+    iedere gewenste taal. (bijvoorbeeld Nederlands of Engels) Het beste is dan ook
+    om
+    de taal te kiezen die het beste past bij je team.
+</p>
+<p>
+    Een voorbeeld van een feature file voor de boekenwinkel applicatie is:
+</p>
+<pre class="line-numbers">
+<code class="language-gherkin">
+Feature: Boek Details 
+    Als een gebruiker
+    Wil ik de details van een geselecteerd boek kunnen inzien
+    Zodat ik kan besluiten of ik het wil kopen
+
+Scenario: Boek details bekijken
+    Gegeven de volgende boeken zijn beschikbaar
+    | Id | Titel                    | Auteur      | Prijs |
+    | 1  | The BDD Book             | Gojko Adzic | 25    |
+    | 2  | Specification by Example | Gojko Adzic | 30    |
+    | 3  | The Cucumber Book        | Matt Wynne  | 35    | 
+    Als ik de details pagina open voor boek met id 2
+    Dan zie ik de volgende informatie
+    | Titel                    | Auteur      | Prijs |
+    | Specification by Example | Gojko Adzic | 30    |
+</code>
+</pre>
+<p>
+    Met SpecFlow kun je deze scenario's automatiseren met behulp van step
+    definitions, die .NET code zijn die de stappen uitvoert die in de feature files
+    zijn beschreven. Je kunt dit combineren met verschillende tools en frameworks,
+    zoals Selenium, Playwright, Docker of Boa Constrictor.
+</p>
+<p>
+    Een voorbeeld van een step definition file voor de boekenwinkel applicatie is:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+[Binding]
+public class BookDetailsSteps
+{
+    private readonly HttpClient _httpClient;
+    private readonly TestContext _testContext;
+    private HttpResponseMessage _response;
+
+    public BookDetailsSteps(HttpClient httpClient, TestContext testContext)
+    {
+        _httpClient = httpClient;
+        _testContext = testContext;
+    }
+
+    [Given(@"de volgende boeken zijn beschikbaar")]
+    public async Task GivenTheFollowingBooks(Table table) 
+    { 
+        foreach (var row in table.Rows) 
+        { 
+            var book = new Book 
+            { 
+                Id = int.Parse(row[“Id”]),
+                Title = row[“Titel”],
+                Author = row[“Auteur”],
+                Price = decimal.Parse(row[“Prijs”]) 
+            };
+
+            await _httpClient.PostAsJsonAsync(“/api/books”, book); 
+        } 
+    }
+
+    [When(@"ik de details pagina open voor boek met id (.*)")]
+    public async Task WhenIOpenTheDetailsPageForBookWithId(int id)
+    {
+        _response = await _httpClient.GetAsync($"/api/books/{id}");
+    }
+
+    [Then(@"zie ik de volgende informatie")]
+    public async Task ThenIShouldSeeTheFollowingInformation(Table table)
+    {
+        var expectedBook = table.CreateInstance<Book>();
+        var actualBook = await _response.Content.ReadFromJsonAsync<Book>();
+        actualBook.Should().BeEquivalentTo(expectedBook);
+    }
+}
+
+</code>
+</pre>
+
+<p>
+    Met deze step definitions kun je je scenario's uitvoeren en controleren of je
+    ASP.NET Apis het verwachte gedrag vertonen. Je kunt hiervoor verschillende
+    testrunners gebruiken, zoals SpecFlow+ Runner, NUnit of xUnit.
+</p>
+<p>
+    Wanneer je een ASP.Net api wilt testen is het handig als de api ook automatisch
+    word opgestart binnen je test. Je kunt dit doen door onderstaande Binding toe te
+    voegen aan je test project:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+[Binding]
+public class ApiHooks
+{
+    private const string _appSettingsFile = "appsettings.json";
+
+    private readonly IObjectContainer _objectContainer;
+
+    public ApiHooks(IObjectContainer objectContainer)
+    {
+        _objectContainer = objectContainer;
+    }
+
+    [BeforeScenario]
+    public async Task RegisterServices()
+    {
+        var factory = GetWebApplicationFactory();
+
+        _objectContainer.RegisterInstanceAs(factory);
+    }
+
+    private WebApplicationFactory<Program> GetWebApplicationFactory() =>
+        new WebApplicationFactory<Program>()
+            .WithWebHostBuilder(builder =>
+            {
+                builder.ConfigureAppConfiguration((context, config) =>
+                {
+                    // Hier kun je app settings overschrijven voor je testen
+                    config.AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), _appSettingsFile));
+                });
+
+                builder.ConfigureTestServices(services =>
+                {
+                    // Hier kun je services registreren specfifiek voor je testen
+                });
+            });
+}
+</code>
+</pre>
+<p>
+    Door deze code toe te voegen kun je de WebApplicationFactory injecteren in je
+    test code. Om vervolgens aan de factory een http client op te vragen. Die is
+    automatisch gekoppeld aan je test api. Pas hiervoor de constructor in de
+    StepDefinitions aan op de
+    volgende manier:
+</p>
+<pre class="line-numbers">
+<code class="language-csharp">
+[Binding]
+public class BookDetailsSteps
+{
+    public BookDetailsSteps(WebApplicationFactory<Program> factory, TestContext testContext)
+    {
+        _httpClient = factory.CreateDefaultClient(new Uri("http://localhost"));
+        _testContext = testContext;
+    }
+}
+</code>
+</pre>
+<h4>
+    Wat zijn de voordelen van SpecFlow en ASP.NET?
+</h4>
+<p>
+    Door SpecFlow te gebruiken in combinatie met ASP.NET kun je verschillende
+    voordelen behalen, zoals:
+</p>
+<ul class="check-list">
+    <li>Je kunt je Apis testen op een gedragsgerichte manier, door scenario's te
+        beschrijven die de verwachte resultaten en acties van je Apis definiëren.
+        Dit helpt je om je te richten op de waarde die je Apis leveren voor de
+        gebruiker, in plaats van op de technische details van de implementatie.</li>
+    <li>Je kunt je documentatie genereren uit je scenario's, zodat je altijd een
+        up-to-date en leesbare beschrijving hebt van je Apis. Dit helpt je om je
+        Apis te documenteren op een manier die begrijpelijk is voor iedereen die
+        erbij betrokken is of er belang bij heeft, zoals je collega's, klanten en
+        stakeholders.</li>
+    <li>Je kunt je communicatie verbeteren met je teamleden, klanten en
+        stakeholders, door een gemeenschappelijke taal te gebruiken om je Apis te
+        specificeren en te testen. Dit helpt je om misverstanden en ambiguïteiten te
+        voorkomen, en om sneller feedback en validatie te krijgen.</li>
+</ul>
+
+<h4>Conclusie</h4>
+
+<p>
+    In deze blog heb ik je laten zien hoe je SpecFlow kunt gebruiken in
+    combinatie met ASP.NET om beter te testen, te documenteren en te communiceren
+    over je Apis. We hebben een voorbeeldproject gebruikt dat een eenvoudige
+    webapplicatie is waar gebruikers boeken kunnen zoeken en kopen. We hebben ons
+    gericht op de API-laag van de applicatie, die verantwoordelijk is voor het
+    leveren van data en services via HTTP-protocollen.
+</p>
+<p>
+    Ik hoop dat deze blog je heeft geïnspireerd om SpecFlow te proberen in je eigen
+    ASP.NET projecten. Als je meer wilt weten over SpecFlow, kun je de <a
+        href="https://specflow.org/">officiële</a>
+    documentatie raadplegen, of een van de vele tutorials en artikelen die online
+    beschikbaar zijn .
+</p>
+
+https://www.pexels.com/photo/white-and-black-mountain-wallpaper-933054/
+
+                            <!-- Post Share Options-->
+                            <div class="post-share-options">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                    <div class="tags">
+                                        <span>Tags:</span>
+                                        
+                                        <a href="#">Specflow</a>
+                                        
+                                        <a href="#">ASP.NET</a>
+                                        
+                                        <a href="#">BDD</a>
+                                        
+                                        <a href="#">API-Testing</a>
+                                        
+                                        <a href="#">Gherkin</a>
+                                        
+                                    </div>
+                                    <ul class="social-box">
+                                        <li><a href="https://www.facebook.com/sharer.php?u=&t=" target="_blank"
+                                                class="fb-share fa fa-facebook-f"></a></li>
+                                        <li><a href="https://twitter.com/share?url=&title=" target="_blank"
+                                                class="t-share fa fa-twitter"></a></li>
+                                        <li><a href="https://api.whatsapp.com/send?text=" target="_blank"
+                                                class="wa-share fa fa-whatsapp"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Author Box -->
+                            <div class="author-box">
+                                <div class="author-box-inner">
+                                    <div class="author-image">
+                                        <img src="/assets/images/resource/author-16.png" alt="" />
+                                    </div>
+                                    <h6>Funs Janssen</h6>
+                                    <div class="text">Mijn expertise als software engineer ligt op het gebied
+                                        van mobiele en web applicaties. Ik combineer graag mijn creativiteit met
+                                        mijn technische vaardigheden om gebruiksvriendelijke en functionele
+                                        oplossingen te ontwikkelen.</div>
+                                    <ul class="author-social-box">
+                                        <li><a href="https://www.linkedin.com/in/funs-janssen/" target="_blank"
+                                                class="fa fa-linkedin"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- More Posts -->
+                            <!-- <div class="more-posts">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                    <a href="specflow.html" class="prev-post">
+                                        <span class="icon fa-solid fa-arrow-left fa-fw"></span>
+                                        Vorige
+                                        <strong>SpecFlow met ASP.NET</strong>
+                                    </a>
+                                    <a href="containers.html" class="next-post">
+                                        <span class="icon fa-solid fa-arrow-right fa-fw"></span>
+                                        Volgende
+                                        <strong>Containers, Go of No-Go</strong>
+                                    </a>
+                                </div>
+                            </div> -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Sidebar Side -->
+            <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                <aside class="sidebar">
+
+                    <!-- Category List -->
+                    <div class="sidebar-widget category-list">
+                        <div class="widget-content">
+                            <div class="sidebar-title">
+                                <h6>Tags</h6>
+                            </div>
+                            <ul>
+                                
+                                <li><a>Specflow</a></li>
+                                
+                                <li><a>ASP.NET</a></li>
+                                
+                                <li><a>BDD</a></li>
+                                
+                                <li><a>API-Testing</a></li>
+                                
+                                <li><a>Gherkin</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- News Widget -->
+                    <div class="sidebar-widget post-widget">
+                        <div class="widget-content">
+                            <div class="sidebar-title">
+                                <h6>Lees verder</h6>
+                            </div>
+                            
+
+                            
+                            <div class="post">
+                                <div class="thumb"><a href="/2023/05/07/blazor-bootstrap-sass.html"><img src="/assets/images/gallery/blazor.jpg"
+                                            alt=""></a></div>
+                                <h6><a href="/2023/05/07/blazor-bootstrap-sass.html">Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project</a>
+                                </h6>
+                                <div class="post-date">door <span>Funs Janssen</span> / 7 Mei 2023</div>
+                            </div>
+
+                            
+
+                            
+
+                            
+                            <div class="post">
+                                <div class="thumb"><a href="/healthchecks"><img src="/assets/images/gallery/healthchecks.webp"
+                                            alt=""></a></div>
+                                <h6><a href="/healthchecks">Hoe een health check voor je web API je kan helpen om betere software te leveren</a>
+                                </h6>
+                                <div class="post-date">door <span>Funs Janssen</span> / 2 Mei 2023</div>
+                            </div>
+
+                            
+
+                            
+
+                            
+                            <div class="post">
+                                <div class="thumb"><a href="/containers"><img src="/assets/images/gallery/containers.webp"
+                                            alt=""></a></div>
+                                <h6><a href="/containers">Wanneer wel en niet kiezen voor containers?</a>
+                                </h6>
+                                <div class="post-date">door <span>Funs Janssen</span> / 24 April 2023</div>
+                            </div>
+
+                            
+
+                            
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="/assets/js/prism.js"></script>
+<!-- End Sidebar Page Container -->
+
+		<!-- CTA One -->
+<section class="cta-one">
+    <div class="auto-container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <!-- CTA Logo -->
+            <div class="cta-logo">
+                <img src="/assets/images/logo-2.webp" style="height: 63px;" alt="" />
+            </div>
+            <!-- Info Text -->
+            <div class="cta-one_text">
+                Oesterzwam 3, 7324CL<br> Apeldoorn.
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End CTA One -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
+    <div class="auto-container">
+        <!--Widgets Section-->
+        <div class="main-footer_widgets">
+            <div class="row clearfix">
+
+                <!--big column-->
+                <div class="big-column col-lg-7 col-md-12 col-sm-12">
+                    <div class="row clearfix">
+
+                        <!--Footer Column-->
+                        <div class="main-footer_column col-lg-5 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <h4 class="main-footer_title">Onze diensten</h4>
+                                <ul class="main-footer_list">
+                                    <li><a href="/contact">Web Development</a></li>
+                                    <li><a href="/contact">Mobile Development</a></li>
+                                    <li><a href="/contact">IT Consultancy</a></li>
+                                    <li><a href="/contact">Data & Analyse</a></li>
+                                    <li><a href="/contact">Security</a></li>
+                                    <li><a href="/contact">Onderhoud</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Footer Column-->
+                        <div class="main-footer_column col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <h4 class="main-footer_title">Paginas</h4>
+                                <ul class="main-footer_list">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/cases">Cases</a></li>
+                                    <li><a href="/cases/mybusinesscard">MyBusinesscard</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--big column-->
+                <div class="big-column col-lg-5 col-md-12 col-sm-12">
+                    <!--Footer Column-->
+                    <div class="main-footer_column">
+                        <div class="footer-widget news-widget">
+                            <h4 class="main-footer_title">Laatste Nieuws & Blog</h4>
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/blazor.jpg" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/2023/05/07/blazor-bootstrap-sass.html">Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 7 Mei 2023
+                                </div>
+                            </div>
+
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/healthchecks.webp" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/healthchecks">Hoe een health check voor je web API je kan helpen om betere software te leveren</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 2 Mei 2023
+                                </div>
+                            </div>
+
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/containers.webp" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/containers">Wanneer wel en niet kiezen voor containers?</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 24 April 2023
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="auto-container">
+            <div class="copyright">&copy; 2023 <a href="/">FJAN IT</a> Alle rechten voorbehouden.</div>
+        </div>
+    </div>
+</footer>
+<!-- End Main Footer -->
+
+	</div>
+	<!-- End PageWrapper -->
+
+	<!-- Scroll To Top -->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fas fa-arrow-up fa-fw"></span></div>
+
+	<script src="/assets/js/jquery.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/magnific-popup.min.js"></script>
+	<script src="/assets/js/appear.js"></script>
+	<script src="/assets/js/parallax.min.js"></script>
+	<script src="/assets/js/tilt.jquery.min.js"></script>
+	<script src="/assets/js/owl.js"></script>
+	<script src="/assets/js/wow.js"></script>
+	<script src="/assets/js/parallax-scroll.js"></script>
+
+	<script src="/assets/js/odometer.js"></script>
+	<script src="/assets/js/nav-tool.js"></script>
+    <script src="/assets/js/validate.js"></script>
+	<script src="/assets/js/jquery-ui.js"></script>
+	<script src="/assets/js/color-settings.js"></script>
+	<script src="/assets/js/script.js"></script>
+
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+</body>
+
+</html>

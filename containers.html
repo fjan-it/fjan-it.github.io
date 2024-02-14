@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>FJAN IT | Containers, Go Of No-Go</title>
+	
+    <meta property="og:title" content="FJAN IT | Containers, Go Of No-Go" />
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+	<!-- Stylesheets -->
+	<link href="/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/css/responsive.css" rel="stylesheet">
+	<!-- Custom style -->
+	<link href="/assets/css/custom-style.css" rel="stylesheet">
+	<link href="/assets/css/prism.css" rel="stylesheet" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+	<!-- Color Themes -->
+	<link id="theme-color-file" href="/assets/css/color-themes/default-color.css" rel="stylesheet">
+
+	<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+
+	<!-- Responsive -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNC8KRRDBS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QNC8KRRDBS');
+</script>
+<body>
+
+	<div class="page-wrapper">
+
+		<!-- Main Header -->
+		<header class="main-header header-style-three">
+
+			<!-- Header Lower -->
+			<div class="header-lower">
+
+				<div class="auto-container">
+					<div class="inner-container d-flex justify-content-between align-items-center">
+
+						<!-- Logo Box -->
+						<div class="logo-box d-flex">
+							<div class="logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo-3.webp" alt=""
+										title=""></a></div>
+						</div>
+
+						<div class="nav-outer d-flex align-items-center">
+
+							<!-- Main Menu -->
+							<nav class="main-menu show navbar-expand-md">
+								<div class="navbar-header">
+									<button class="navbar-toggler" type="button" data-toggle="collapse"
+										data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+										aria-expanded="false" aria-label="Toggle navigation">
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+
+								<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+									<ul class="navigation clearfix">
+										<li><a href="/">Home</a></li>
+										<li><a href="/blog">Blog</a></li>
+										<li class="dropdown"><a href="#">Cases</a>
+											<ul>
+												<li><a href="/cases">Cases</a></li>
+												<li><a href="/cases/mybusinesscard">MyBusinesscard</a></li>
+											</ul>
+										</li>
+
+										<li><a href="/contact">Contact</a></li>
+									</ul>
+								</div>
+
+							</nav>
+							<!-- Main Menu End-->
+
+						</div>
+
+						<!-- Outer Box -->
+						<div class="outer-box d-flex align-items-center">
+
+							<!-- Phone Box -->
+							<div class="header-phone">
+								<div class="header-phone_inner">
+									<span class="header-phone_icon flaticon-telephone"></span>
+									Telefoonnummer <br>
+									<a href="tel:+31657842820">(+31) 657 842 820 bellen</a>
+								</div>
+							</div>
+
+							<!-- Mobile Navigation Toggler -->
+							<div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
+										alt="" /></span></div>
+
+						</div>
+						<!-- End Outer Box -->
+
+					</div>
+
+				</div>
+			</div>
+			<!-- End Header Lower -->
+
+			<!-- Sticky Header  -->
+			<div class="sticky-header">
+				<div class="auto-container">
+					<div class="d-flex justify-content-between align-items-center">
+						<!-- Logo -->
+						<div class="logo">
+							<a href="/" title=""><img class="fjan-logo" src="/assets/images/logo.webp" alt="" title=""></a>
+						</div>
+
+						<!-- Right Col -->
+						<div class="right-box">
+							<!-- Main Menu -->
+							<nav class="main-menu">
+								<!--Keep This Empty / Menu will come through Javascript-->
+							</nav>
+							<!-- Main Menu End-->
+
+							<!-- Mobile Navigation Toggler -->
+							<div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
+										alt="" /></span></div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- End Sticky Menu -->
+
+			<!-- Mobile Menu  -->
+			<div class="mobile-menu">
+				<div class="menu-backdrop"></div>
+				<div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>
+				<nav class="menu-box">
+					<div class="nav-logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo.webp" alt="" title=""></a></div>
+					<div class="menu-outer">
+						<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+				</nav>
+			</div>
+			<!-- End Mobile Menu -->
+
+		</header>
+		<!-- End Main Header -->
+
+		<!-- Page Title -->
+		<section class="page-title" style="background-image:url(/assets/images/background/3.webp)">
+			<div class="auto-container">
+				<h1>Containers, Go Of No-Go</h1>
+				<ul class="bread-crumb clearfix">
+					<li><a href="/">Home</a></li>
+					<li>Containers, Go Of No-Go</li>
+				</ul>
+			</div>
+		</section>
+		<!-- End Page Title -->
+
+		<!-- Sidebar Page Container -->
+<div class="sidebar-page-container">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <!-- Content Side -->
+            <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                <div class="blog-detail">
+                    <div class="inner-box">
+                        <div class="image">
+                            <div class="tag">Containers</div>
+                            <img src="/assets/images/gallery/containers.webp" alt="" />
+                        </div>
+                        <div class="lower-content">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="post-info">
+                                    <div class="post-info_image">
+                                        <img src="/assets/images/resource/author-1.webp" alt="" />
+                                    </div>
+                                    24 April 2023<br>
+                                    door <span>Funs Janssen</span>
+                                </div>
+                                <!-- Social Box -->
+                                <ul class="social-box">
+                                    <li><a href="https://www.facebook.com/sharer.php?u=&t=" target="_blank"
+                                            class="fb-share fa fa-facebook-f"></a></li>
+                                    <li><a href="https://twitter.com/share?url=&title=" target="_blank"
+                                            class="t-share fa fa-twitter"></a></li>
+                                    <li><a href="https://api.whatsapp.com/send?text=" target="_blank"
+                                            class="wa-share fa fa-whatsapp"></a></li>
+                                </ul>
+                            </div>
+
+                            <h3 class="blog-title">Wanneer wel en niet kiezen voor containers?
+</h3>
+
+<p>
+    Containers zijn een vorm van besturingssysteemvirtualisatie. Met één container
+    kun je allerlei dingen uitvoeren, van een kleine microservice of een
+    kleinschalig softwareproces tot een grotere applicatie. In de container
+    bevinden zich alle benodigde uitvoerbare bestanden, binaire code, bibliotheken
+    en configuratiebestanden. In vergelijking tot virtualisatiemethoden voor
+    servers of machines bevatten containers echter geen besturingssysteemimages.
+    Hierdoor zijn ze lichter en draagbaar, met aanzienlijk minder overhead.
+</p>
+<p>
+    Containers bieden veel voordelen voor het ontwikkelen, testen en implementeren
+    van applicaties in meerdere omgevingen, van de lokale laptop van een
+    ontwikkelaar tot een on-premises datacenter tot zelfs de cloud. Containers
+    zorgen voor minder overhead, verbeterde portabiliteit, gelijkere werking, meer
+    efficiëntie en betere applicatieontwikkeling.
+</p>
+<p>Maar containers zijn niet altijd de beste oplossing voor elke situatie. Er zijn
+    ook enkele nadelen of uitdagingen waar je rekening mee moet houden als je
+    containers wilt gebruiken. Hier zijn enkele voorbeelden van wanneer je wel en
+    niet zou moeten kiezen voor containers:
+</p>
+<h4>Wanneer wel kiezen voor containers?</h4>
+<ul class="check-list">
+    <li>Als je applicaties wilt moderniseren of herstructureren voor de cloud.
+        Containers maken het mogelijk om bestaande applicaties naar modernere
+        omgevingen te migreren of te herstructureren, waarbij je gebruik kunt maken
+        van de volledige voordelen van een containerapplicatiearchitectuur.
+    </li>
+    <li>Als je microservices wilt gebruiken. Containers bieden ondersteuning voor
+        microservicearchitecturen, waarbij gedistribueerde applicaties en services
+        gemakkelijk kunnen worden geïsoleerd, geïmplementeerd en geschaald op basis
+        van afzonderlijke containerbouwstenen.</li>
+    <li>Als je DevOps wilt toepassen. Containers bieden ondersteuning voor
+        Continuous Integration en Continuous Deployment (CI/CD), waardoor
+        ontwikkelings-, test- en productiecycli kunnen worden versneld.</li>
+</ul>
+<h4>Wanneer niet kiezen voor containers?</h4>
+<ul class="check-list">
+    <li>Als je applicaties afhankelijk zijn van het besturingssysteem. Containers
+        delen hetzelfde besturingssysteem als de hostmachine, dus als je applicaties
+        specifieke besturingssysteemfuncties of -versies nodig hebben, kunnen
+        containers problemen opleveren.
+    </li>
+    <li>Als je applicaties veel resources nodig hebben. Containers hebben minder
+        overhead dan virtuele machines, maar ze hebben nog steeds resources nodig om
+        te draaien. Als je applicaties veel CPU, geheugen of schijfruimte nodig
+        hebben, kunnen containers de prestaties beïnvloeden of conflicten
+        veroorzaken met andere containers op dezelfde hostmachine.</li>
+    <li>Als je applicaties complex of monolithisch zijn. Containers zijn geschikt
+        voor het verpakken en implementeren van kleine, onafhankelijke en modulaire
+        applicaties of services. Als je applicaties complex of monolithisch zijn,
+        kan het moeilijk zijn om ze op te splitsen in containers of om ze te beheren
+        met een orkestratieplatform zoals Kubernetes.</li>
+</ul>
+
+https://www.pexels.com/photo/cargo-container-lot-906494/
+
+                            <!-- Post Share Options-->
+                            <div class="post-share-options">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                    <div class="tags">
+                                        <span>Tags:</span>
+                                        
+                                        <a href="#">Containers</a>
+                                        
+                                        <a href="#">Virtualisatie</a>
+                                        
+                                        <a href="#">Microservices</a>
+                                        
+                                        <a href="#">DevOps</a>
+                                        
+                                    </div>
+                                    <ul class="social-box">
+                                        <li><a href="https://www.facebook.com/sharer.php?u=&t=" target="_blank"
+                                                class="fb-share fa fa-facebook-f"></a></li>
+                                        <li><a href="https://twitter.com/share?url=&title=" target="_blank"
+                                                class="t-share fa fa-twitter"></a></li>
+                                        <li><a href="https://api.whatsapp.com/send?text=" target="_blank"
+                                                class="wa-share fa fa-whatsapp"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Author Box -->
+                            <div class="author-box">
+                                <div class="author-box-inner">
+                                    <div class="author-image">
+                                        <img src="/assets/images/resource/author-16.png" alt="" />
+                                    </div>
+                                    <h6>Funs Janssen</h6>
+                                    <div class="text">Mijn expertise als software engineer ligt op het gebied
+                                        van mobiele en web applicaties. Ik combineer graag mijn creativiteit met
+                                        mijn technische vaardigheden om gebruiksvriendelijke en functionele
+                                        oplossingen te ontwikkelen.</div>
+                                    <ul class="author-social-box">
+                                        <li><a href="https://www.linkedin.com/in/funs-janssen/" target="_blank"
+                                                class="fa fa-linkedin"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- More Posts -->
+                            <!-- <div class="more-posts">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                    <a href="specflow.html" class="prev-post">
+                                        <span class="icon fa-solid fa-arrow-left fa-fw"></span>
+                                        Vorige
+                                        <strong>SpecFlow met ASP.NET</strong>
+                                    </a>
+                                    <a href="containers.html" class="next-post">
+                                        <span class="icon fa-solid fa-arrow-right fa-fw"></span>
+                                        Volgende
+                                        <strong>Containers, Go of No-Go</strong>
+                                    </a>
+                                </div>
+                            </div> -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Sidebar Side -->
+            <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                <aside class="sidebar">
+
+                    <!-- Category List -->
+                    <div class="sidebar-widget category-list">
+                        <div class="widget-content">
+                            <div class="sidebar-title">
+                                <h6>Tags</h6>
+                            </div>
+                            <ul>
+                                
+                                <li><a>Containers</a></li>
+                                
+                                <li><a>Virtualisatie</a></li>
+                                
+                                <li><a>Microservices</a></li>
+                                
+                                <li><a>DevOps</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- News Widget -->
+                    <div class="sidebar-widget post-widget">
+                        <div class="widget-content">
+                            <div class="sidebar-title">
+                                <h6>Lees verder</h6>
+                            </div>
+                            
+
+                            
+                            <div class="post">
+                                <div class="thumb"><a href="/2023/05/07/blazor-bootstrap-sass.html"><img src="/assets/images/gallery/blazor.jpg"
+                                            alt=""></a></div>
+                                <h6><a href="/2023/05/07/blazor-bootstrap-sass.html">Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project</a>
+                                </h6>
+                                <div class="post-date">door <span>Funs Janssen</span> / 7 Mei 2023</div>
+                            </div>
+
+                            
+
+                            
+
+                            
+                            <div class="post">
+                                <div class="thumb"><a href="/healthchecks"><img src="/assets/images/gallery/healthchecks.webp"
+                                            alt=""></a></div>
+                                <h6><a href="/healthchecks">Hoe een health check voor je web API je kan helpen om betere software te leveren</a>
+                                </h6>
+                                <div class="post-date">door <span>Funs Janssen</span> / 2 Mei 2023</div>
+                            </div>
+
+                            
+
+                            
+
+                            
+
+                            
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="/assets/js/prism.js"></script>
+<!-- End Sidebar Page Container -->
+
+		<!-- CTA One -->
+<section class="cta-one">
+    <div class="auto-container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <!-- CTA Logo -->
+            <div class="cta-logo">
+                <img src="/assets/images/logo-2.webp" style="height: 63px;" alt="" />
+            </div>
+            <!-- Info Text -->
+            <div class="cta-one_text">
+                Oesterzwam 3, 7324CL<br> Apeldoorn.
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End CTA One -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
+    <div class="auto-container">
+        <!--Widgets Section-->
+        <div class="main-footer_widgets">
+            <div class="row clearfix">
+
+                <!--big column-->
+                <div class="big-column col-lg-7 col-md-12 col-sm-12">
+                    <div class="row clearfix">
+
+                        <!--Footer Column-->
+                        <div class="main-footer_column col-lg-5 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <h4 class="main-footer_title">Onze diensten</h4>
+                                <ul class="main-footer_list">
+                                    <li><a href="/contact">Web Development</a></li>
+                                    <li><a href="/contact">Mobile Development</a></li>
+                                    <li><a href="/contact">IT Consultancy</a></li>
+                                    <li><a href="/contact">Data & Analyse</a></li>
+                                    <li><a href="/contact">Security</a></li>
+                                    <li><a href="/contact">Onderhoud</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Footer Column-->
+                        <div class="main-footer_column col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <h4 class="main-footer_title">Paginas</h4>
+                                <ul class="main-footer_list">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/cases">Cases</a></li>
+                                    <li><a href="/cases/mybusinesscard">MyBusinesscard</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--big column-->
+                <div class="big-column col-lg-5 col-md-12 col-sm-12">
+                    <!--Footer Column-->
+                    <div class="main-footer_column">
+                        <div class="footer-widget news-widget">
+                            <h4 class="main-footer_title">Laatste Nieuws & Blog</h4>
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/blazor.jpg" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/2023/05/07/blazor-bootstrap-sass.html">Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 7 Mei 2023
+                                </div>
+                            </div>
+
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/healthchecks.webp" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/healthchecks">Hoe een health check voor je web API je kan helpen om betere software te leveren</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 2 Mei 2023
+                                </div>
+                            </div>
+
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/containers.webp" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/containers">Wanneer wel en niet kiezen voor containers?</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 24 April 2023
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="auto-container">
+            <div class="copyright">&copy; 2023 <a href="/">FJAN IT</a> Alle rechten voorbehouden.</div>
+        </div>
+    </div>
+</footer>
+<!-- End Main Footer -->
+
+	</div>
+	<!-- End PageWrapper -->
+
+	<!-- Scroll To Top -->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fas fa-arrow-up fa-fw"></span></div>
+
+	<script src="/assets/js/jquery.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/magnific-popup.min.js"></script>
+	<script src="/assets/js/appear.js"></script>
+	<script src="/assets/js/parallax.min.js"></script>
+	<script src="/assets/js/tilt.jquery.min.js"></script>
+	<script src="/assets/js/owl.js"></script>
+	<script src="/assets/js/wow.js"></script>
+	<script src="/assets/js/parallax-scroll.js"></script>
+
+	<script src="/assets/js/odometer.js"></script>
+	<script src="/assets/js/nav-tool.js"></script>
+    <script src="/assets/js/validate.js"></script>
+	<script src="/assets/js/jquery-ui.js"></script>
+	<script src="/assets/js/color-settings.js"></script>
+	<script src="/assets/js/script.js"></script>
+
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+</body>
+
+</html>

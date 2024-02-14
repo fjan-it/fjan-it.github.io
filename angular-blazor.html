@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>FJAN IT | Angular Vs Blazor</title>
+	
+    <meta property="og:title" content="FJAN IT | Angular Vs Blazor" />
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+	<!-- Stylesheets -->
+	<link href="/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/css/responsive.css" rel="stylesheet">
+	<!-- Custom style -->
+	<link href="/assets/css/custom-style.css" rel="stylesheet">
+	<link href="/assets/css/prism.css" rel="stylesheet" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+	<!-- Color Themes -->
+	<link id="theme-color-file" href="/assets/css/color-themes/default-color.css" rel="stylesheet">
+
+	<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+
+	<!-- Responsive -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNC8KRRDBS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QNC8KRRDBS');
+</script>
+<body>
+
+	<div class="page-wrapper">
+
+		<!-- Main Header -->
+		<header class="main-header header-style-three">
+
+			<!-- Header Lower -->
+			<div class="header-lower">
+
+				<div class="auto-container">
+					<div class="inner-container d-flex justify-content-between align-items-center">
+
+						<!-- Logo Box -->
+						<div class="logo-box d-flex">
+							<div class="logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo-3.webp" alt=""
+										title=""></a></div>
+						</div>
+
+						<div class="nav-outer d-flex align-items-center">
+
+							<!-- Main Menu -->
+							<nav class="main-menu show navbar-expand-md">
+								<div class="navbar-header">
+									<button class="navbar-toggler" type="button" data-toggle="collapse"
+										data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+										aria-expanded="false" aria-label="Toggle navigation">
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+
+								<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+									<ul class="navigation clearfix">
+										<li><a href="/">Home</a></li>
+										<li><a href="/blog">Blog</a></li>
+										<li class="dropdown"><a href="#">Cases</a>
+											<ul>
+												<li><a href="/cases">Cases</a></li>
+												<li><a href="/cases/mybusinesscard">MyBusinesscard</a></li>
+											</ul>
+										</li>
+
+										<li><a href="/contact">Contact</a></li>
+									</ul>
+								</div>
+
+							</nav>
+							<!-- Main Menu End-->
+
+						</div>
+
+						<!-- Outer Box -->
+						<div class="outer-box d-flex align-items-center">
+
+							<!-- Phone Box -->
+							<div class="header-phone">
+								<div class="header-phone_inner">
+									<span class="header-phone_icon flaticon-telephone"></span>
+									Telefoonnummer <br>
+									<a href="tel:+31657842820">(+31) 657 842 820 bellen</a>
+								</div>
+							</div>
+
+							<!-- Mobile Navigation Toggler -->
+							<div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
+										alt="" /></span></div>
+
+						</div>
+						<!-- End Outer Box -->
+
+					</div>
+
+				</div>
+			</div>
+			<!-- End Header Lower -->
+
+			<!-- Sticky Header  -->
+			<div class="sticky-header">
+				<div class="auto-container">
+					<div class="d-flex justify-content-between align-items-center">
+						<!-- Logo -->
+						<div class="logo">
+							<a href="/" title=""><img class="fjan-logo" src="/assets/images/logo.webp" alt="" title=""></a>
+						</div>
+
+						<!-- Right Col -->
+						<div class="right-box">
+							<!-- Main Menu -->
+							<nav class="main-menu">
+								<!--Keep This Empty / Menu will come through Javascript-->
+							</nav>
+							<!-- Main Menu End-->
+
+							<!-- Mobile Navigation Toggler -->
+							<div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
+										alt="" /></span></div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- End Sticky Menu -->
+
+			<!-- Mobile Menu  -->
+			<div class="mobile-menu">
+				<div class="menu-backdrop"></div>
+				<div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>
+				<nav class="menu-box">
+					<div class="nav-logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo.webp" alt="" title=""></a></div>
+					<div class="menu-outer">
+						<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+				</nav>
+			</div>
+			<!-- End Mobile Menu -->
+
+		</header>
+		<!-- End Main Header -->
+
+		<!-- Page Title -->
+		<section class="page-title" style="background-image:url(/assets/images/background/3.webp)">
+			<div class="auto-container">
+				<h1>Angular Vs Blazor</h1>
+				<ul class="bread-crumb clearfix">
+					<li><a href="/">Home</a></li>
+					<li>Angular Vs Blazor</li>
+				</ul>
+			</div>
+		</section>
+		<!-- End Page Title -->
+
+		<!-- Sidebar Page Container -->
+<div class="sidebar-page-container">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <!-- Content Side -->
+            <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                <div class="blog-detail">
+                    <div class="inner-box">
+                        <div class="image">
+                            <div class="tag">Web Development</div>
+                            <img src="/assets/images/gallery/angular-blazor.webp" alt="" />
+                        </div>
+                        <div class="lower-content">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="post-info">
+                                    <div class="post-info_image">
+                                        <img src="/assets/images/resource/author-1.webp" alt="" />
+                                    </div>
+                                    2 Januari 2023<br>
+                                    door <span>Funs Janssen</span>
+                                </div>
+                                <!-- Social Box -->
+                                <ul class="social-box">
+                                    <li><a href="https://www.facebook.com/sharer.php?u=&t=" target="_blank"
+                                            class="fb-share fa fa-facebook-f"></a></li>
+                                    <li><a href="https://twitter.com/share?url=&title=" target="_blank"
+                                            class="t-share fa fa-twitter"></a></li>
+                                    <li><a href="https://api.whatsapp.com/send?text=" target="_blank"
+                                            class="wa-share fa fa-whatsapp"></a></li>
+                                </ul>
+                            </div>
+
+                            <h3 class="blog-title">Angular vs Blazor: Wat te kiezen voor jouw volgende Web Project
+</h3>
+<p>
+    Als je een web developer bent, heb je waarschijnlijk gehoord van Angular en
+    Blazor. Dit zijn twee populaire frameworks voor het bouwen van moderne web
+    applicaties. Maar wat zijn de verschillen tussen deze twee frameworks? En welke
+    moet je kiezen voor jouw volgende web project? In deze blog zal ik een
+    vergelijking maken tussen Angular en Blazor op basis van verschillende criteria,
+    zoals:
+</p>
+<ul class="check-list">
+    <li>De taal en het platform</li>
+    <li>De architectuur en de componenten</li>
+    <li>De ondersteuning voor SPA en PWA</li>
+    <li>De interoperabiliteit met JavaScript</li>
+    <li>De prestaties en de productiviteit</li>
+</ul>
+
+<h4>De taal en het platform</h4>
+<p>
+    Een van de belangrijkste verschillen tussen Angular en Blazor is de taal en het
+    platform waarop ze gebaseerd zijn. Angular is een JavaScript-based framework dat
+    draait op de browser. Het maakt gebruik van TypeScript, een superset van
+    JavaScript die statische typen en object-georiënteerd programmeren toevoegt.
+    Angular is een onderdeel van het Node.js ecosysteem, wat betekent dat je veel
+    tools en bibliotheken kunt gebruiken die beschikbaar zijn voor JavaScript
+    ontwikkelaars.
+</p>
+<p>
+    Blazor is een C#-based framework dat draait op .NET. Het maakt gebruik van
+    WebAssembly, een technologie die .NET code kan compileren en uitvoeren in de
+    browser. Blazor is een onderdeel van het ASP.NET Core ecosysteem, wat betekent
+    dat je veel tools en bibliotheken kunt gebruiken die beschikbaar zijn voor .NET
+    ontwikkelaars.
+</p>
+<h4>De architectuur en de componenten</h4>
+<p>
+    Een ander verschil tussen Angular en Blazor is de architectuur en de componenten
+    die ze gebruiken om web applicaties te bouwen. Beide frameworks zijn gebaseerd
+    op het concept van component-based development, wat betekent dat je je
+    applicatie kunt opdelen in herbruikbare stukjes UI logica die met elkaar
+    communiceren via inputs en outputs.
+</p>
+<p>
+    Angular maakt gebruik van een hiërarchische component tree, waarbij elke
+    component een template (HTML), een class (TypeScript) en een style (CSS) heeft.
+    Angular biedt ook directives, pipes en services om extra functionaliteit toe te
+    voegen aan je componenten. Angular volgt het model-view-viewmodel (MVVM)
+    patroon, waarbij je data kunt binden tussen je view (template) en je viewmodel
+    (class).
+</p>
+<p>
+    Blazor maakt gebruik van een vlakke component tree, waarbij elke component een
+    Razor-bestand heeft dat HTML en C# code combineert. Blazor biedt ook parameters,
+    cascading values, event handlers en dependency injection om extra
+    functionaliteit toe te voegen aan je componenten. Blazor volgt een
+    model-view-controller (MVC) patroon, waarbij je data kunt doorgeven tussen je
+    controller (C# code) en je view (Razor-bestand).
+</p>
+
+<h4>
+    De ondersteuning voor SPA en PWA
+</h4>
+<p>
+    Een ander verschil tussen Angular en Blazor is de ondersteuning voor single-page
+    applications (SPA) en progressive web applications (PWA). SPA's zijn web
+    applicaties
+    die bestaan uit één HTML-pagina die dynamisch wordt bijgewerkt zonder de pagina
+    te
+    herladen. PWA's zijn web applicaties die zich gedragen als native apps, met
+    functies
+    zoals offline werken, push notificaties en installatie op het startscherm.
+</p>
+<p>
+    Angular heeft een ingebouwde ondersteuning voor SPA's, aangezien het framework
+    is
+    ontworpen om snelle en responsieve web applicaties te bouwen. Angular heeft ook
+    een
+    eenvoudige manier om een bestaande Angular app om te zetten in een PWA, door
+    gebruik
+    te maken van het <a href="https://angular.io/guide/service-worker-getting-started">@angular/pwa
+        pakket.</a> Dit pakket voegt automatisch de benodigde
+    bestanden en configuraties toe om een service worker te registreren, een web app
+    manifest te genereren en de assets te cachen.
+</p>
+<p>
+    Blazor heeft ook een ingebouwde ondersteuning voor SPA's, aangezien het
+    framework
+    gebruik maakt van WebAssembly om .NET code uit te voeren in de browser. Blazor
+    heeft
+    echter geen ingebouwde ondersteuning voor PWA's, wat betekent dat je zelf een
+    service worker en een web app manifest moet toevoegen en configureren. Er zijn
+    wel
+    enkele hulpmiddelen beschikbaar om dit proces te vergemakkelijken, zoals het
+    Blazor.PWA.MSBuild pakket of de Blazor WebAssembly PWA template.
+</p>
+<h4>
+    De interoperabiliteit met JavaScript
+</h4>
+<p>
+    Een ander verschil tussen Angular en Blazor is de interoperabiliteit met
+    JavaScript
+    (JS). JS interop is het vermogen om JS functies aan te roepen vanuit .NET
+    methoden
+    en .NET methoden aan te roepen vanuit JS functies. Dit is nuttig om gebruik te
+    maken
+    van bestaande JS bibliotheken of om toegang te krijgen tot browser API's die
+    niet
+    beschikbaar zijn in .NET.
+</p>
+<p>
+    Angular heeft een natuurlijke interoperabiliteit met JS, aangezien het framework
+    zelf gebaseerd is op JS. Je kunt eenvoudig JS code schrijven of importeren in je
+    TypeScript bestanden en deze aanroepen vanuit je Angular componenten. Je kunt
+    ook
+    TypeScript decorators gebruiken om .NET methoden bloot te stellen aan JS code.
+</p>
+<p>
+    Blazor heeft een kunstmatige interoperabiliteit met JS, aangezien het framework
+    gebaseerd is op .NET. Je moet gebruik maken van speciale klassen en methoden om
+    JS
+    code aan te roepen of te importeren in je C# bestanden en deze aan te roepen
+    vanuit
+    je Blazor componenten. Je moet ook gebruik maken van speciale attributen om .NET
+    methoden bloot te stellen aan JS code.
+</p>
+<h4>
+    De prestaties en de productiviteit
+</h4>
+<p>
+    Een laatste verschil tussen Angular en Blazor is de prestaties en de
+    productiviteit
+    van de frameworks. Prestaties hebben betrekking op hoe snel en efficiënt de web
+    applicaties werken, zowel in de browser als op de server. Productiviteit heeft
+    betrekking op hoe snel en gemakkelijk de web applicaties ontwikkeld kunnen
+    worden,
+    zowel door individuele ontwikkelaars als door teams.
+</p>
+<p>
+    Angular heeft een goede reputatie op het gebied van prestaties, vooral dankzij
+    de
+    change detection strategie die gebruik maakt van zones om wijzigingen in de
+    component tree te detecteren en te verwerken. Angular heeft ook verschillende
+    opties
+    om de applicatie te optimaliseren, zoals lazy loading, code splitting, tree
+    shaking
+    en ahead-of-time (AOT) compilatie. Angular heeft echter ook een aantal nadelen
+    op
+    het gebied van prestaties, zoals de grootte van het framework zelf, de
+    complexiteit
+    van de build pipeline en de afhankelijkheid van JavaScript.
+</p>
+<p>
+    Blazor heeft een veelbelovende reputatie op het gebied van prestaties, vooral
+    dankzij het gebruik van WebAssembly om .NET code uit te voeren in de browser.
+    WebAssembly is sneller dan JavaScript in veel scenario's, omdat het een
+    gecompileerde binaire code is die direct door de browser kan worden
+    geïnterpreteerd.
+    Blazor heeft echter ook een aantal nadelen op het gebied van prestaties, zoals
+    de
+    opstarttijd van het framework zelf, de grootte van de .NET runtime en de DLL's
+    en de
+    interoperabiliteit met JavaScript.
+</p>
+<p>
+    Angular heeft een goede reputatie op het gebied van productiviteit, vooral
+    dankzij
+    de Angular CLI die veel taken automatiseert, zoals het genereren van
+    componenten,
+    het uitvoeren van tests en het bouwen van applicaties. Angular heeft ook een
+    rijke
+    set aan tools en bibliotheken die beschikbaar zijn voor JavaScript
+    ontwikkelaars,
+    zoals VS Code, Angular Material, RxJS en NgRx. Angular heeft echter ook een
+    aantal
+    nadelen op het gebied van productiviteit, zoals de leercurve van het framework
+    zelf,
+    de boilerplate code die nodig is voor sommige functies en de compatibiliteit met
+    verschillende versies.
+</p>
+<p>
+    Blazor heeft een veelbelovende reputatie op het gebied van productiviteit,
+    vooral
+    dankzij het gebruik van C# als programmeertaal die veel ontwikkelaars al kennen
+    en
+    waarderen. Blazor heeft ook een rijke set aan tools en bibliotheken die
+    beschikbaar
+    zijn voor .NET ontwikkelaars, zoals Visual Studio, Blazorise, Blazored en
+    FluentValidation. Blazor heeft echter ook een aantal nadelen op het gebied van
+    productiviteit, zoals de volwassenheid van het framework zelf, de beperkte
+    ondersteuning voor sommige functies en de schaarste aan bronnen en documentatie.
+</p>
+
+<h4>Conclusie</h4>
+
+<p>In deze blog heb ik een vergelijking gemaakt tussen Angular en Blazor, twee
+    populaire frameworks voor het bouwen van moderne web applicaties. We hebben
+    gekeken naar de verschillen op basis van verschillende criteria.
+</p>
+<p>
+    We hebben gezien dat er geen eenduidig antwoord is op de vraag welk framework
+    beter is. Het hangt allemaal af van je persoonlijke voorkeur, je ervaring, je
+    doelstellingen en je context. Angular en Blazor hebben elk hun eigen voor- en
+    nadelen, hun eigen sterktes en zwaktes, hun eigen fans en critici.
+</p>
+<p>
+    Het belangrijkste is om beide frameworks een kans te geven, ze uit te proberen,
+    ze te leren kennen en ze te vergelijken. Alleen zo kun je een weloverwogen
+    beslissing maken over welk framework het beste past bij jouw volgende web
+    project.
+</p>
+
+https://www.pexels.com/photo/scenic-view-of-mountains-during-dawn-1261728/
+
+                            <!-- Post Share Options-->
+                            <div class="post-share-options">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                    <div class="tags">
+                                        <span>Tags:</span>
+                                        
+                                        <a href="#">Angular</a>
+                                        
+                                        <a href="#">Blazor</a>
+                                        
+                                        <a href="#">WebAssembly</a>
+                                        
+                                        <a href="#">WebDevelopment</a>
+                                        
+                                    </div>
+                                    <ul class="social-box">
+                                        <li><a href="https://www.facebook.com/sharer.php?u=&t=" target="_blank"
+                                                class="fb-share fa fa-facebook-f"></a></li>
+                                        <li><a href="https://twitter.com/share?url=&title=" target="_blank"
+                                                class="t-share fa fa-twitter"></a></li>
+                                        <li><a href="https://api.whatsapp.com/send?text=" target="_blank"
+                                                class="wa-share fa fa-whatsapp"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Author Box -->
+                            <div class="author-box">
+                                <div class="author-box-inner">
+                                    <div class="author-image">
+                                        <img src="/assets/images/resource/author-16.png" alt="" />
+                                    </div>
+                                    <h6>Funs Janssen</h6>
+                                    <div class="text">Mijn expertise als software engineer ligt op het gebied
+                                        van mobiele en web applicaties. Ik combineer graag mijn creativiteit met
+                                        mijn technische vaardigheden om gebruiksvriendelijke en functionele
+                                        oplossingen te ontwikkelen.</div>
+                                    <ul class="author-social-box">
+                                        <li><a href="https://www.linkedin.com/in/funs-janssen/" target="_blank"
+                                                class="fa fa-linkedin"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- More Posts -->
+                            <!-- <div class="more-posts">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                    <a href="specflow.html" class="prev-post">
+                                        <span class="icon fa-solid fa-arrow-left fa-fw"></span>
+                                        Vorige
+                                        <strong>SpecFlow met ASP.NET</strong>
+                                    </a>
+                                    <a href="containers.html" class="next-post">
+                                        <span class="icon fa-solid fa-arrow-right fa-fw"></span>
+                                        Volgende
+                                        <strong>Containers, Go of No-Go</strong>
+                                    </a>
+                                </div>
+                            </div> -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Sidebar Side -->
+            <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                <aside class="sidebar">
+
+                    <!-- Category List -->
+                    <div class="sidebar-widget category-list">
+                        <div class="widget-content">
+                            <div class="sidebar-title">
+                                <h6>Tags</h6>
+                            </div>
+                            <ul>
+                                
+                                <li><a>Angular</a></li>
+                                
+                                <li><a>Blazor</a></li>
+                                
+                                <li><a>WebAssembly</a></li>
+                                
+                                <li><a>WebDevelopment</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- News Widget -->
+                    <div class="sidebar-widget post-widget">
+                        <div class="widget-content">
+                            <div class="sidebar-title">
+                                <h6>Lees verder</h6>
+                            </div>
+                            
+
+                            
+                            <div class="post">
+                                <div class="thumb"><a href="/2023/05/07/blazor-bootstrap-sass.html"><img src="/assets/images/gallery/blazor.jpg"
+                                            alt=""></a></div>
+                                <h6><a href="/2023/05/07/blazor-bootstrap-sass.html">Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project</a>
+                                </h6>
+                                <div class="post-date">door <span>Funs Janssen</span> / 7 Mei 2023</div>
+                            </div>
+
+                            
+
+                            
+
+                            
+                            <div class="post">
+                                <div class="thumb"><a href="/healthchecks"><img src="/assets/images/gallery/healthchecks.webp"
+                                            alt=""></a></div>
+                                <h6><a href="/healthchecks">Hoe een health check voor je web API je kan helpen om betere software te leveren</a>
+                                </h6>
+                                <div class="post-date">door <span>Funs Janssen</span> / 2 Mei 2023</div>
+                            </div>
+
+                            
+
+                            
+
+                            
+                            <div class="post">
+                                <div class="thumb"><a href="/containers"><img src="/assets/images/gallery/containers.webp"
+                                            alt=""></a></div>
+                                <h6><a href="/containers">Wanneer wel en niet kiezen voor containers?</a>
+                                </h6>
+                                <div class="post-date">door <span>Funs Janssen</span> / 24 April 2023</div>
+                            </div>
+
+                            
+
+                            
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="/assets/js/prism.js"></script>
+<!-- End Sidebar Page Container -->
+
+		<!-- CTA One -->
+<section class="cta-one">
+    <div class="auto-container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <!-- CTA Logo -->
+            <div class="cta-logo">
+                <img src="/assets/images/logo-2.webp" style="height: 63px;" alt="" />
+            </div>
+            <!-- Info Text -->
+            <div class="cta-one_text">
+                Oesterzwam 3, 7324CL<br> Apeldoorn.
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End CTA One -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
+    <div class="auto-container">
+        <!--Widgets Section-->
+        <div class="main-footer_widgets">
+            <div class="row clearfix">
+
+                <!--big column-->
+                <div class="big-column col-lg-7 col-md-12 col-sm-12">
+                    <div class="row clearfix">
+
+                        <!--Footer Column-->
+                        <div class="main-footer_column col-lg-5 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <h4 class="main-footer_title">Onze diensten</h4>
+                                <ul class="main-footer_list">
+                                    <li><a href="/contact">Web Development</a></li>
+                                    <li><a href="/contact">Mobile Development</a></li>
+                                    <li><a href="/contact">IT Consultancy</a></li>
+                                    <li><a href="/contact">Data & Analyse</a></li>
+                                    <li><a href="/contact">Security</a></li>
+                                    <li><a href="/contact">Onderhoud</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Footer Column-->
+                        <div class="main-footer_column col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <h4 class="main-footer_title">Paginas</h4>
+                                <ul class="main-footer_list">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/cases">Cases</a></li>
+                                    <li><a href="/cases/mybusinesscard">MyBusinesscard</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--big column-->
+                <div class="big-column col-lg-5 col-md-12 col-sm-12">
+                    <!--Footer Column-->
+                    <div class="main-footer_column">
+                        <div class="footer-widget news-widget">
+                            <h4 class="main-footer_title">Laatste Nieuws & Blog</h4>
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/blazor.jpg" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/2023/05/07/blazor-bootstrap-sass.html">Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 7 Mei 2023
+                                </div>
+                            </div>
+
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/healthchecks.webp" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/healthchecks">Hoe een health check voor je web API je kan helpen om betere software te leveren</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 2 Mei 2023
+                                </div>
+                            </div>
+
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/containers.webp" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/containers">Wanneer wel en niet kiezen voor containers?</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 24 April 2023
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="auto-container">
+            <div class="copyright">&copy; 2023 <a href="/">FJAN IT</a> Alle rechten voorbehouden.</div>
+        </div>
+    </div>
+</footer>
+<!-- End Main Footer -->
+
+	</div>
+	<!-- End PageWrapper -->
+
+	<!-- Scroll To Top -->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fas fa-arrow-up fa-fw"></span></div>
+
+	<script src="/assets/js/jquery.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/magnific-popup.min.js"></script>
+	<script src="/assets/js/appear.js"></script>
+	<script src="/assets/js/parallax.min.js"></script>
+	<script src="/assets/js/tilt.jquery.min.js"></script>
+	<script src="/assets/js/owl.js"></script>
+	<script src="/assets/js/wow.js"></script>
+	<script src="/assets/js/parallax-scroll.js"></script>
+
+	<script src="/assets/js/odometer.js"></script>
+	<script src="/assets/js/nav-tool.js"></script>
+    <script src="/assets/js/validate.js"></script>
+	<script src="/assets/js/jquery-ui.js"></script>
+	<script src="/assets/js/color-settings.js"></script>
+	<script src="/assets/js/script.js"></script>
+
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+</body>
+
+</html>

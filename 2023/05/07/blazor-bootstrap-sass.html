@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>FJAN IT | Blazor, Bootstrap en SASS</title>
+	
+    <meta property="og:title" content="FJAN IT | Blazor, Bootstrap en SASS" />
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+	<!-- Stylesheets -->
+	<link href="/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/css/responsive.css" rel="stylesheet">
+	<!-- Custom style -->
+	<link href="/assets/css/custom-style.css" rel="stylesheet">
+	<link href="/assets/css/prism.css" rel="stylesheet" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+	<!-- Color Themes -->
+	<link id="theme-color-file" href="/assets/css/color-themes/default-color.css" rel="stylesheet">
+
+	<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+
+	<!-- Responsive -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNC8KRRDBS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QNC8KRRDBS');
+</script>
+<body>
+
+	<div class="page-wrapper">
+
+		<!-- Main Header -->
+		<header class="main-header header-style-three">
+
+			<!-- Header Lower -->
+			<div class="header-lower">
+
+				<div class="auto-container">
+					<div class="inner-container d-flex justify-content-between align-items-center">
+
+						<!-- Logo Box -->
+						<div class="logo-box d-flex">
+							<div class="logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo-3.webp" alt=""
+										title=""></a></div>
+						</div>
+
+						<div class="nav-outer d-flex align-items-center">
+
+							<!-- Main Menu -->
+							<nav class="main-menu show navbar-expand-md">
+								<div class="navbar-header">
+									<button class="navbar-toggler" type="button" data-toggle="collapse"
+										data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+										aria-expanded="false" aria-label="Toggle navigation">
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+
+								<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+									<ul class="navigation clearfix">
+										<li><a href="/">Home</a></li>
+										<li><a href="/blog">Blog</a></li>
+										<li class="dropdown"><a href="#">Cases</a>
+											<ul>
+												<li><a href="/cases">Cases</a></li>
+												<li><a href="/cases/mybusinesscard">MyBusinesscard</a></li>
+											</ul>
+										</li>
+
+										<li><a href="/contact">Contact</a></li>
+									</ul>
+								</div>
+
+							</nav>
+							<!-- Main Menu End-->
+
+						</div>
+
+						<!-- Outer Box -->
+						<div class="outer-box d-flex align-items-center">
+
+							<!-- Phone Box -->
+							<div class="header-phone">
+								<div class="header-phone_inner">
+									<span class="header-phone_icon flaticon-telephone"></span>
+									Telefoonnummer <br>
+									<a href="tel:+31657842820">(+31) 657 842 820 bellen</a>
+								</div>
+							</div>
+
+							<!-- Mobile Navigation Toggler -->
+							<div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
+										alt="" /></span></div>
+
+						</div>
+						<!-- End Outer Box -->
+
+					</div>
+
+				</div>
+			</div>
+			<!-- End Header Lower -->
+
+			<!-- Sticky Header  -->
+			<div class="sticky-header">
+				<div class="auto-container">
+					<div class="d-flex justify-content-between align-items-center">
+						<!-- Logo -->
+						<div class="logo">
+							<a href="/" title=""><img class="fjan-logo" src="/assets/images/logo.webp" alt="" title=""></a>
+						</div>
+
+						<!-- Right Col -->
+						<div class="right-box">
+							<!-- Main Menu -->
+							<nav class="main-menu">
+								<!--Keep This Empty / Menu will come through Javascript-->
+							</nav>
+							<!-- Main Menu End-->
+
+							<!-- Mobile Navigation Toggler -->
+							<div class="mobile-nav-toggler"><span class="icon"><img src="/assets/images/icons/menu.png"
+										alt="" /></span></div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- End Sticky Menu -->
+
+			<!-- Mobile Menu  -->
+			<div class="mobile-menu">
+				<div class="menu-backdrop"></div>
+				<div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>
+				<nav class="menu-box">
+					<div class="nav-logo"><a href="/"><img class="fjan-logo" src="/assets/images/logo.webp" alt="" title=""></a></div>
+					<div class="menu-outer">
+						<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+				</nav>
+			</div>
+			<!-- End Mobile Menu -->
+
+		</header>
+		<!-- End Main Header -->
+
+		<!-- Page Title -->
+		<section class="page-title" style="background-image:url(/assets/images/background/3.webp)">
+			<div class="auto-container">
+				<h1>Blazor, Bootstrap en SASS</h1>
+				<ul class="bread-crumb clearfix">
+					<li><a href="/">Home</a></li>
+					<li>Blazor, Bootstrap en SASS</li>
+				</ul>
+			</div>
+		</section>
+		<!-- End Page Title -->
+
+		<!-- Sidebar Page Container -->
+<div class="sidebar-page-container">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <!-- Content Side -->
+            <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                <div class="blog-detail">
+                    <div class="inner-box">
+                        <div class="image">
+                            <div class="tag">Web Development</div>
+                            <img src="/assets/images/gallery/blazor.jpg" alt="" />
+                        </div>
+                        <div class="lower-content">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="post-info">
+                                    <div class="post-info_image">
+                                        <img src="/assets/images/resource/author-1.webp" alt="" />
+                                    </div>
+                                    7 Mei 2023<br>
+                                    door <span>Funs Janssen</span>
+                                </div>
+                                <!-- Social Box -->
+                                <ul class="social-box">
+                                    <li><a href="https://www.facebook.com/sharer.php?u=&t=" target="_blank"
+                                            class="fb-share fa fa-facebook-f"></a></li>
+                                    <li><a href="https://twitter.com/share?url=&title=" target="_blank"
+                                            class="t-share fa fa-twitter"></a></li>
+                                    <li><a href="https://api.whatsapp.com/send?text=" target="_blank"
+                                            class="wa-share fa fa-whatsapp"></a></li>
+                                </ul>
+                            </div>
+
+                            <h3 class="blog-title">Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project
+</h3>
+
+<p>
+    Bootstrap is een populair framework voor het maken van responsieve en mobielvriendelijke websites. Sass is een
+    uitbreiding van CSS die extra functies biedt, zoals variabelen, geneste regels, mixins en meer. Door Bootstrap en
+    Sass te gebruiken in je Blazor-applicatie, kun je de stijl en het uiterlijk van je componenten verbeteren en
+    aanpassen.
+</p>
+<p>
+    Om Bootstrap en Sass toe te voegen aan je Blazor-applicatie, moet je de volgende stappen volgen:
+</p>
+<ul class="check-list">
+    <li>Voeg bootstrap toe aan je project.
+    </li>
+    <li>Maak je eigen aangepaste stijl.</li>
+    <li>Configureer de Sass compiler.</li>
+</ul>
+<p>In deze blog zal ik je laten zien hoe je deze stappen kunt uitvoeren in een eenvoudige Blazor. Ik zal gebruik maken
+    van Visual Studio als editor. Ik zal ook laten zien hoe je Sass kunt gebruiken om de standaardstijlen van Bootstrap
+    aan te passen en om aangepaste stijlen toe te voegen aan je Blazor-componenten.
+</p>
+<h4>Bootstrap toevoegen</h4>
+<p>
+    Wanneer je een project hebt aangemaakt kun je een client-side library toevoegen. Rechter muisklik op je project in
+    Visual Studio. Vervolgens klik je op Add en dan Client-Side Library.
+</p>
+
+<div class="blog-image my-4">
+    <img src="/assets/images/gallery/bootstrap-install.png" />
+</div>
+
+<p>
+    Vervolgens zoek je naar bootstrap en kies je de gewenste versie. Kies vervolgens voor specifieke bestanden en vink
+    dan alleen de folders js en scss aan. Tot slot verander je de Target Location naar <i>Styles/bootstrap</i>. Klik dan op
+    install zodat de bestanden in je project worden geladen.
+</p>
+<h4>Een aangepaste stijl maken</h4>
+<p>
+    Maak een bestand genaamd <i>site.scss</i> aan in de nieuwe folder Styles. Kopieer vervolgens de inhoud van het bestand
+    <i>wwwroot/css/site.css</i> naar het nieuwe bestand in de Styles folder. Vervolgens maak je nog een bestand aan genaamd
+    <i>_variables.scss</i>. Hierin gaan we de bootstrap overrides plaatsen.
+</p>
+<p>
+    Voeg hiervoor de volgende regels toe aan dit nieuwe bestand. Zie de opmerkingen voor wat we precies veranderen aan
+    de stijl. Voor alle mogelijke opties kun je de Bootstrap documentatie raadplegen.
+</p>
+
+<pre class="line-numbers">
+<code class="language-css">
+@import 'bootstrap/scss/_functions';
+
+// We veranderen de primaire kleur naar oranje.
+$primary: #ff6a00;
+
+// We maken een nieuwe variabele aan voor onze accent kleur.
+$accent: #0066ff;
+
+// We veranderen de border radius van bootstrap knoppen.
+$btn-border-radius: 0px;
+
+@import 'bootstrap/scss/_variables';
+
+// Vervolgens voegen we de kleur toe aan de bootstrap map.
+$theme-colors: map-merge($theme-colors, ( "primary": $primary, "accent": $accent ));
+</code></pre>
+
+<p>Om deze aangepaste variabelen te gebruiken voegen we aan <i>site.scss</i> nog de volgende regels toe. We plaatsen deze
+    helemaal aan het begin van dit bestand.</p>
+
+<pre class="line-numbers">
+<code class="language-css">
+@import '_variables.scss';
+@import 'bootstrap/scss/bootstrap.scss';    
+</code></pre>
+
+<h4>Sass Compiler Configureren</h4>
+
+<p>Wat we nu gaan doen is de SASS compiler configureren in Visual Studio. Hiervoor voegen we de volgende extensie toe:
+    <i>Web Compiler 2022+</i>. Nadat je deze hebt gedownload in het extensie venster zul je Visual Studio opnieuw moeten
+    opstarten.
+</p>
+<p>Wanneer de extensie geïnstalleerd is klik je met de rechtermuisknop op het bestand <i>Styles/site.scss</i>. Vervolgens kies
+    je Web Compiler en dan Compile File. Er is nu een <i>compilerconfig.json</i> bestand aangemaakt. Open deze en verander het
+    outputFile pad naar <i>wwwroot/css/site.css</i>. Dit zorgt ervoor dat de css file in je wwwroot komt te staan.</p>
+
+<p>
+    Naast een site.css genereert de web compiler ook een minified file. Deze kun je het beste gebruiken in je
+    applicatie. Open hiervoor <i>Pages/_Host.cshtml</i>. In deze file verwijder je de regel waarin bootstrap.min.css wordt
+    toegevoegd en verander je de regel met <i>css/site.css</i> naar <i>css/site.min.css</i>.
+</p>
+
+<p>
+    Tot slot is er nu nog 1 handige optie die je aan wilt zetten. Namelijk compile on build. Dit zorgt ervoor dat de
+    compiler altijd draait tijdens een build. Hiervoor klik je met de rechtermuisknop op <i>compilerconfig.json</i> en dan Web
+    Compiler en vervolgens Enable compile on build… Dit zorgt ervoor dat er een NuGet package aan je project wordt
+    toegevoegd.
+</p>
+
+<p>
+    Wanneer je nu de Blazor site start zul je zien dat de stijl van bootstrap componenten is gewijzigd. Zie als
+    voorbeeld de counter knop. De kleur is oranje en de hoeken zijn niet meer rond.
+</p>
+
+<div class="blog-image my-4">
+    <img src="/assets/images/gallery/bootstrap-result.png" />
+</div>
+
+<p>
+    Bedankt voor het lezen! Voor meer informatie kun je kijken op <a
+        href="https://getbootstrap.com">getbootstrap.com</a>
+</p>
+
+https://www.pexels.com/photo/green-forest-near-mountain-range-under-clear-sky-361104/
+
+                            <!-- Post Share Options-->
+                            <div class="post-share-options">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                    <div class="tags">
+                                        <span>Tags:</span>
+                                        
+                                        <a href="#">Blazor</a>
+                                        
+                                        <a href="#">Bootstrap</a>
+                                        
+                                        <a href="#">SASS</a>
+                                        
+                                    </div>
+                                    <ul class="social-box">
+                                        <li><a href="https://www.facebook.com/sharer.php?u=&t=" target="_blank"
+                                                class="fb-share fa fa-facebook-f"></a></li>
+                                        <li><a href="https://twitter.com/share?url=&title=" target="_blank"
+                                                class="t-share fa fa-twitter"></a></li>
+                                        <li><a href="https://api.whatsapp.com/send?text=" target="_blank"
+                                                class="wa-share fa fa-whatsapp"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Author Box -->
+                            <div class="author-box">
+                                <div class="author-box-inner">
+                                    <div class="author-image">
+                                        <img src="/assets/images/resource/author-16.png" alt="" />
+                                    </div>
+                                    <h6>Funs Janssen</h6>
+                                    <div class="text">Mijn expertise als software engineer ligt op het gebied
+                                        van mobiele en web applicaties. Ik combineer graag mijn creativiteit met
+                                        mijn technische vaardigheden om gebruiksvriendelijke en functionele
+                                        oplossingen te ontwikkelen.</div>
+                                    <ul class="author-social-box">
+                                        <li><a href="https://www.linkedin.com/in/funs-janssen/" target="_blank"
+                                                class="fa fa-linkedin"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- More Posts -->
+                            <!-- <div class="more-posts">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                    <a href="specflow.html" class="prev-post">
+                                        <span class="icon fa-solid fa-arrow-left fa-fw"></span>
+                                        Vorige
+                                        <strong>SpecFlow met ASP.NET</strong>
+                                    </a>
+                                    <a href="containers.html" class="next-post">
+                                        <span class="icon fa-solid fa-arrow-right fa-fw"></span>
+                                        Volgende
+                                        <strong>Containers, Go of No-Go</strong>
+                                    </a>
+                                </div>
+                            </div> -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Sidebar Side -->
+            <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                <aside class="sidebar">
+
+                    <!-- Category List -->
+                    <div class="sidebar-widget category-list">
+                        <div class="widget-content">
+                            <div class="sidebar-title">
+                                <h6>Tags</h6>
+                            </div>
+                            <ul>
+                                
+                                <li><a>Blazor</a></li>
+                                
+                                <li><a>Bootstrap</a></li>
+                                
+                                <li><a>SASS</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- News Widget -->
+                    <div class="sidebar-widget post-widget">
+                        <div class="widget-content">
+                            <div class="sidebar-title">
+                                <h6>Lees verder</h6>
+                            </div>
+                            
+
+                            
+
+                            
+
+                            
+                            <div class="post">
+                                <div class="thumb"><a href="/healthchecks"><img src="/assets/images/gallery/healthchecks.webp"
+                                            alt=""></a></div>
+                                <h6><a href="/healthchecks">Hoe een health check voor je web API je kan helpen om betere software te leveren</a>
+                                </h6>
+                                <div class="post-date">door <span>Funs Janssen</span> / 2 Mei 2023</div>
+                            </div>
+
+                            
+
+                            
+
+                            
+                            <div class="post">
+                                <div class="thumb"><a href="/containers"><img src="/assets/images/gallery/containers.webp"
+                                            alt=""></a></div>
+                                <h6><a href="/containers">Wanneer wel en niet kiezen voor containers?</a>
+                                </h6>
+                                <div class="post-date">door <span>Funs Janssen</span> / 24 April 2023</div>
+                            </div>
+
+                            
+
+                            
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="/assets/js/prism.js"></script>
+<!-- End Sidebar Page Container -->
+
+		<!-- CTA One -->
+<section class="cta-one">
+    <div class="auto-container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <!-- CTA Logo -->
+            <div class="cta-logo">
+                <img src="/assets/images/logo-2.webp" style="height: 63px;" alt="" />
+            </div>
+            <!-- Info Text -->
+            <div class="cta-one_text">
+                Oesterzwam 3, 7324CL<br> Apeldoorn.
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End CTA One -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
+    <div class="auto-container">
+        <!--Widgets Section-->
+        <div class="main-footer_widgets">
+            <div class="row clearfix">
+
+                <!--big column-->
+                <div class="big-column col-lg-7 col-md-12 col-sm-12">
+                    <div class="row clearfix">
+
+                        <!--Footer Column-->
+                        <div class="main-footer_column col-lg-5 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <h4 class="main-footer_title">Onze diensten</h4>
+                                <ul class="main-footer_list">
+                                    <li><a href="/contact">Web Development</a></li>
+                                    <li><a href="/contact">Mobile Development</a></li>
+                                    <li><a href="/contact">IT Consultancy</a></li>
+                                    <li><a href="/contact">Data & Analyse</a></li>
+                                    <li><a href="/contact">Security</a></li>
+                                    <li><a href="/contact">Onderhoud</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Footer Column-->
+                        <div class="main-footer_column col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <h4 class="main-footer_title">Paginas</h4>
+                                <ul class="main-footer_list">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/cases">Cases</a></li>
+                                    <li><a href="/cases/mybusinesscard">MyBusinesscard</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--big column-->
+                <div class="big-column col-lg-5 col-md-12 col-sm-12">
+                    <!--Footer Column-->
+                    <div class="main-footer_column">
+                        <div class="footer-widget news-widget">
+                            <h4 class="main-footer_title">Laatste Nieuws & Blog</h4>
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/blazor.jpg" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/2023/05/07/blazor-bootstrap-sass.html">Hoe je Bootstrap en SASS toe kunt voegen aan jouw Blazor project</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 7 Mei 2023
+                                </div>
+                            </div>
+
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/healthchecks.webp" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/healthchecks">Hoe een health check voor je web API je kan helpen om betere software te leveren</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 2 Mei 2023
+                                </div>
+                            </div>
+
+                            
+
+                            <!--News Widget Block-->
+                            <div class="news-widget-block">
+                                <div class="news-widget_image">
+                                    <img src="/assets/images/gallery/containers.webp" alt="" />
+                                </div>
+                                <h6 class="news-widget_title"><a href="/containers">Wanneer wel en niet kiezen voor containers?</a></h6>
+                                <div class="news-widget_post-date">door <a href="#">Funs Janssen</a> / 24 April 2023
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="auto-container">
+            <div class="copyright">&copy; 2023 <a href="/">FJAN IT</a> Alle rechten voorbehouden.</div>
+        </div>
+    </div>
+</footer>
+<!-- End Main Footer -->
+
+	</div>
+	<!-- End PageWrapper -->
+
+	<!-- Scroll To Top -->
+	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fas fa-arrow-up fa-fw"></span></div>
+
+	<script src="/assets/js/jquery.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/magnific-popup.min.js"></script>
+	<script src="/assets/js/appear.js"></script>
+	<script src="/assets/js/parallax.min.js"></script>
+	<script src="/assets/js/tilt.jquery.min.js"></script>
+	<script src="/assets/js/owl.js"></script>
+	<script src="/assets/js/wow.js"></script>
+	<script src="/assets/js/parallax-scroll.js"></script>
+
+	<script src="/assets/js/odometer.js"></script>
+	<script src="/assets/js/nav-tool.js"></script>
+    <script src="/assets/js/validate.js"></script>
+	<script src="/assets/js/jquery-ui.js"></script>
+	<script src="/assets/js/color-settings.js"></script>
+	<script src="/assets/js/script.js"></script>
+
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+</body>
+
+</html>
